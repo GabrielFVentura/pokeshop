@@ -14,30 +14,38 @@ export class PokemonsListaComponent implements OnInit {
   public pokemon1: any;
   public pokemon2: any;
   public pokemons: any[];
+  public pokemonsBuscados: any[];
   public promoMainPage: boolean;
+  public p: number;
+
   @Output() pokemonAdicionadoEvent = new EventEmitter<Pokemon>();
 
   constructor(
     private service: PokemonService,
     private _route: ActivatedRoute
   ) {
+    this.p = 1;
     this.pokemons = [];
+    this.pokemonsBuscados = [];
     this.promoMainPage = true;
   }
 
   ngOnInit(): void {
     this.BuscarPokemonsPorTipo();
+    this.BuscarPokemon();
   }
 
   public BuscarPokemon(): any {
-    this.service.BuscarPokemonPorId(1).subscribe(p => {
-      this.pokemon1 = p;
-      console.log(p);
-    });
+    const arrayIds: number[] = [];
 
-    this.service.BuscarPokemonPorId(6).subscribe(p => {
-      this.pokemon2 = p;
-      console.log(p);
+    for (let i = 1; i <= 932; i++) {
+      arrayIds.push(i);
+    }
+
+    arrayIds.forEach(id => {
+      this.service.BuscarPokemonPorId(id).subscribe(p => {
+        this.pokemonsBuscados.push(p);
+      }, (e) => console.log(e), () => console.log(this.pokemonsBuscados));
     });
   }
 
@@ -66,7 +74,7 @@ export class PokemonsListaComponent implements OnInit {
         const randomArray = (length: number, max: number) =>
           Array(length).fill(undefined).map(() => Math.round(Math.random() * max));
 
-        randomArray(10, 932).forEach(r => {
+        randomArray(10, 898).forEach(r => {
           this.service.BuscarPokemonPorId(r).subscribe(p => {
               const pk = new Pokemon();
 
@@ -77,8 +85,8 @@ export class PokemonsListaComponent implements OnInit {
               pk.id = p.id;
               pk.stats = p.stats;
               pk.promo = (Math.floor(Math.random() * 50) + 1);
-              pk.price = (( 10 * (p.weight + p.height) * 10 / (p.id / 10)).toFixed(2)) as any;
-              pk.price = Math.floor(((pk.price * (100 - pk.promo)) / 100)).toFixed(2);
+              pk.price = (( 10 * (p.weight + p.height) / (p.id / 10)).toFixed(2)) as any;
+              pk.price = Math.floor(((pk.price * pk.promo) / 100)).toFixed(2);
               pk.imgUrl = p.sprites.front_shiny;
               this.pokemons.push(pk);
 
@@ -88,6 +96,19 @@ export class PokemonsListaComponent implements OnInit {
       }
     }, (error => console.log(error)));
   }
+
+  // public BuscarPokemonsPorTipo(): any {
+  //   this._route.queryParams.subscribe((params) => {
+  //     console.log(params.type);
+  //     this.pokemons = this.pokemonsBuscados.filter(p => {
+  //       return p.types.some((t: any) => {
+  //         console.log('type', t.type.name === params.type);
+  //         return t.type.name === params.type;
+  //       });
+  //     });
+  //     console.log(this.pokemonsBuscados);
+  //   });
+  // }
 
   adicionarPokemon(p: Pokemon): void {
     this.service.SetPokemonEnviado(p);

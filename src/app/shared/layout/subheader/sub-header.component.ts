@@ -113,12 +113,6 @@ export class SubHeaderComponent implements OnInit {
         style: {'margin-left': '6px'}
       },
       {
-        label: 'Gelo',
-        routerLink: 'pokemons/lista',
-        queryParams: {type: 'ice'},
-        style: {'margin-left': '6px'}
-      },
-      {
         label: 'Noturno',
         routerLink: 'pokemons/lista',
         queryParams: {type: 'dark'},
