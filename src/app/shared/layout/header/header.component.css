@@ -1,5 +1,5 @@
 .poke-ball-main-open {
-  background-color: slategrey;
+  background-color: red;
   display: flex;
   position: fixed;
   width: 20.3%;
@@ -44,6 +44,6 @@
   position: absolute;
   left: 25%;
   top:2%;
-  height:7.5%;
+  height:8.1%;
   width:50%
 }

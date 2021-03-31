@@ -29,7 +29,6 @@ export class PokeBallComponent implements OnInit {
 
   adicionarPokemonEvent(): void{
     this.service.GetPokemonEnviado().subscribe((p: Pokemon | any) => {
-
       if (this.pokemonsAdicionados.some((poke: Pokemon | any) => {
         if (poke.id === p.id){
           poke.quantidade++;
@@ -46,12 +45,13 @@ export class PokeBallComponent implements OnInit {
   }
 
   recuperarPokebola(): void {
-    this.pokemonsAdicionados = JSON.parse(localStorage.pokemons);
-    this.pokemonsAdicionados.forEach((p: Pokemon | any) => {
-      p.quantidade = p.quantidade as number;
-      this.precoTotal = this.precoTotal + ((+p.price * p.quantidade) as number);
-    });
-    console.log(this.pokemonsAdicionados);
+    if (localStorage.pokemons !== undefined) {
+      this.pokemonsAdicionados = JSON.parse(localStorage.pokemons);
+      this.pokemonsAdicionados.forEach((p: Pokemon | any) => {
+        p.quantidade = p.quantidade as number;
+        this.precoTotal = this.precoTotal + ((+p.price * p.quantidade) as number);
+      });
+    }
   }
 
   removerPokemon(p: Pokemon): void {

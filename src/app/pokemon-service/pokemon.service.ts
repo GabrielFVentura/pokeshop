@@ -49,7 +49,6 @@ export class PokemonService {
   }
 
   public SetPokemonEnviado(pokemon?: Pokemon): void {
-    console.log('setei pokemon');
     this.subject.next(pokemon);
     this.pokemon  = pokemon;
   }
