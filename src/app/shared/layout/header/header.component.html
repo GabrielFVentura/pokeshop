@@ -1,0 +1,17 @@
+
+  <p-menubar [style]="{'font-size': '35px', 'height':'5%','background-color':'red','margin-top':'-5px'}" styleClass="header__main">
+    <ng-template pTemplate="start">
+      <img routerLink="/" src="./assets/img/logo.png" height="80" class="p-mr-2" alt="brand logo">
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <img (click)="togglePokeBall()"
+           [src]="open ? './assets/img/poke_ball--open.png' : './assets/img/poke_ball--closed.png'"
+           [height]="open ? '80': '60'" class="p-mr-2" alt="poke ball img"
+           [ngClass]="open ? 'poke-ball-open' : 'poke-ball-closed'">
+    </ng-template>
+  </p-menubar>
+
+  <input style="" pInputText class="col-8 header-main__search" type="text" placeholder="Search">
+
+  <app-poke-ball [class]="open ? 'poke-ball-main-open' : 'poke-ball-main-closed'"></app-poke-ball>

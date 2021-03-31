@@ -1,0 +1,44 @@
+<div class="row pokemon-list-row">
+  <div class="pokemon-card" *ngFor="let p of pokemons; let i = index">
+
+    <p-card class="col-12">
+      <ng-template pTemplate="header">
+        <img alt="Card" height="40%" [src]="p?.imgUrl">
+      </ng-template>
+      <span class="row col-12 pokemon-list-row">
+        <span class="pokemon-list-name col-12">{{p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)}}
+        </span>
+
+        <span class="row col-12">
+          <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$"><span
+          class="col-6 pokemon-list-price" style="">{{p?.price}}</span>
+        </span>
+      </span>
+      <!--      <ng-template pTemplate="body">-->
+
+      <!--      </ng-template>-->
+      <p-table styleClass="table-class" [value]="p?.stats">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 18%; font-size:8px ;text-align: center;">HP</th>
+            <th style="width: 18%; font-size:9px ;text-align: center;">ATK</th>
+            <th style="width: 18%; font-size:9px ;text-align: center;">DEF</th>
+            <th style="width: 18%; font-size:9px ;text-align: center;">SP-ATK</th>
+            <th style="width: 18%; font-size:9px ;text-align: center;">SP-DEF</th>
+            <th style="width: 18%; font-size:9px ;text-align: center;">SPD</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-k>
+          <th style="text-align: center;font-size:9px">{{k.base_stat}}</th>
+        </ng-template>
+      </p-table>
+
+
+      <ng-template pTemplate="footer">
+        <p-button class="pokemon-list-add-button" (click)="adicionarPokemon(p);" label="Adicionar"
+                  icon="pi pi-check"></p-button>
+      </ng-template>
+    </p-card>
+
+  </div>
+</div>
