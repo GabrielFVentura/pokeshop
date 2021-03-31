@@ -12,7 +12,6 @@ import {MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {CardModule} from 'primeng/card';
 import { PokemonsListaComponent } from './pokemons/pokemons-lista/pokemons-lista.component';
-import {PokemonService} from './pokemon-service/pokemon.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { SubHeaderComponent } from './shared/layout/subheader/sub-header.component';

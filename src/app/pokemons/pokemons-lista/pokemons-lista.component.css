@@ -3,9 +3,12 @@
 }
 
 .pokemon-list-name{
-  font-size:24px;
+  font-size: 21px;
   font-weight: bold;
-  text-align:left;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .pokemon-list-add-button{
@@ -27,5 +30,14 @@
 .pokemon-list-img{
   margin-left: 10%;
   margin-top: 6%;
+}
+
+.pokemon-list-promo{
+  background-color:red;
+  color:ghostwhite;
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
 

@@ -43,8 +43,9 @@ export class PokemonsListaComponent implements OnInit {
 
   public BuscarPokemonsPorTipo(): any {
     this._route.queryParams.subscribe((params) => {
-      if (params.type) {
-        this.promoMainPage = false;
+      this.pokemons = [];
+      console.log(params);
+      if (params.type !== 'fp') {
 
         this.service.BuscarPokemonsPorTipo(params.type).subscribe(p => {
           this.pokemons = p.pokemon;
@@ -53,36 +54,39 @@ export class PokemonsListaComponent implements OnInit {
                 pok.id = pokemonBuscado.id;
                 pok.stats = pokemonBuscado.stats;
                 pok.price = ((pokemonBuscado.weight + pokemonBuscado.height) / (pokemonBuscado.id / 10)).toFixed(2);
-                pok.imgUrl = pokemonBuscado.sprites.other['official-artwork'].front_default;
+                // pok.imgUrl = pokemonBuscado.sprites.other['official-artwork'].front_default;
+                pok.imgUrl = pokemonBuscado.sprites.front_default;
               },
               (error) => console.error(error));
           });
         }, (e) => console.error(e));
-      } else if (params.type === undefined) {
-        this.promoMainPage = true;
+      } else {
+        console.log('entrei');
 
         const randomArray = (length: number, max: number) =>
           Array(length).fill(undefined).map(() => Math.round(Math.random() * max));
 
         randomArray(10, 932).forEach(r => {
           this.service.BuscarPokemonPorId(r).subscribe(p => {
-              console.log(p);
               const pk = new Pokemon();
-              pk.pokemon = [];
 
-              pk.pokemon.name = p.name;
+              pk.pokemon = {
+                name: p.name
+              };
+
               pk.id = p.id;
               pk.stats = p.stats;
-              pk.price = ((p.weight + p.height) * 10 / (p.id / 10)).toFixed(2) as any;
+              pk.promo = (Math.floor(Math.random() * 50) + 1);
+              pk.price = (( 10 * (p.weight + p.height) * 10 / (p.id / 10)).toFixed(2)) as any;
+              pk.price = Math.floor(((pk.price * (100 - pk.promo)) / 100)).toFixed(2);
               pk.imgUrl = p.sprites.front_shiny;
-              console.log(p);
               this.pokemons.push(pk);
 
             }, (e) => console.error(e),
             () => console.log(this.pokemons));
         });
       }
-    });
+    }, (error => console.log(error)));
   }
 
   adicionarPokemon(p: Pokemon): void {

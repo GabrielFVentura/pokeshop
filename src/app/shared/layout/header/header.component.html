@@ -1,7 +1,7 @@
 <p-menubar [style]="{'font-size': '35px', 'height':'5%','background-color':'red','margin-top':'-5px'}"
            styleClass="header__main">
   <ng-template pTemplate="start">
-    <img routerLink="/pokemons/lista/" src="./assets/img/logo.png" height="80" class="p-mr-2" alt="brand logo">
+    <img routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80" class="p-mr-2" alt="brand logo">
   </ng-template>
 
   <ng-template pTemplate="end">
