@@ -18,6 +18,7 @@ import { SubHeaderComponent } from './shared/layout/subheader/sub-header.compone
 import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { PokeBallComponent } from './shared/layout/poke-ball/poke-ball.component';
+import { PokemonsDetalharComponent } from './pokemons/pokemons-detalhar/pokemons-detalhar.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PokeBallComponent } from './shared/layout/poke-ball/poke-ball.component
     HeaderComponent,
     PokemonsListaComponent,
     SubHeaderComponent,
-    PokeBallComponent
+    PokeBallComponent,
+    PokemonsDetalharComponent
   ],
   imports: [
     BrowserModule,

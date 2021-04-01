@@ -32,7 +32,7 @@ export class PokemonsListaComponent implements OnInit {
 
   ngOnInit(): void {
     this.BuscarPokemonsPorTipo();
-    this.BuscarPokemon();
+    // this.BuscarPokemon();
   }
 
   public BuscarPokemon(): any {
@@ -44,15 +44,17 @@ export class PokemonsListaComponent implements OnInit {
 
     arrayIds.forEach(id => {
       this.service.BuscarPokemonPorId(id).subscribe(p => {
-        this.pokemonsBuscados.push(p);
-      }, (e) => console.log(e), () => console.log(this.pokemonsBuscados));
+          this.pokemonsBuscados.push(p);
+        }, (e) => console.log(e),
+        // () => console.log(this.pokemonsBuscados)
+      );
     });
   }
 
   public BuscarPokemonsPorTipo(): any {
     this._route.queryParams.subscribe((params) => {
       this.pokemons = [];
-      console.log(params);
+      // console.log(params);
       if (params.type !== 'fp') {
 
         this.service.BuscarPokemonsPorTipo(params.type).subscribe(p => {
@@ -69,7 +71,6 @@ export class PokemonsListaComponent implements OnInit {
           });
         }, (e) => console.error(e));
       } else {
-        console.log('entrei');
 
         const randomArray = (length: number, max: number) =>
           Array(length).fill(undefined).map(() => Math.round(Math.random() * max));
@@ -91,7 +92,8 @@ export class PokemonsListaComponent implements OnInit {
               this.pokemons.push(pk);
 
             }, (e) => console.error(e),
-            () => console.log(this.pokemons));
+            // () => console.log(this.pokemons)
+          );
         });
       }
     }, (error => console.log(error)));

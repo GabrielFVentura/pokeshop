@@ -8,7 +8,7 @@
     <img (click)="togglePokeBall()"
          [src]="open ? './assets/img/poke_ball--open.png' : './assets/img/poke_ball--closed.png'"
          [height]="open ? '80': '60'" class="p-mr-2" alt="poke ball img"
-         [ngClass]="open ? 'poke-ball-open' : 'poke-ball-closed'">
+         [ngClass]="open ? 'poke-ball-open' : 'poke-ball-closed'" (mouseover)="open = true">
   </ng-template>
 </p-menubar>
 

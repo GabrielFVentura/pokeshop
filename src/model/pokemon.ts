@@ -7,4 +7,5 @@ export class Pokemon {
   slot?: string;
   stats?: any;
   promo?: number;
+  name?: string;
 }

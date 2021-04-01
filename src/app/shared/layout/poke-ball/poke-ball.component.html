@@ -10,8 +10,8 @@
          *ngFor="let p of pokemonsAdicionados; let i = index" class="poke-ball-card-list-body">
       <ul class="pokeball-pokemon-list">
         <li class="pokeball-body">
-          <a href="#">
-            <img class="pokeball-pokemon-list-img" src="{{p.imgUrl}}">
+          <a [routerLink]="['pokemons/detalhar']" [queryParams]="p?.id">
+            <img class="pokeball-pokemon-list-img" src="{{p?.imgUrl}}" alt="./assets/img/notfound.png">
           </a>
           <div class="row pokeball-pokemon-row">
             <div class="col-7">

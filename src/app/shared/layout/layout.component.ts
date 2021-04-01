@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -10,13 +10,15 @@ export class LayoutComponent implements OnInit {
   public color: string;
 
   constructor(
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _router: Router,
   ) {
     this.color = 'white';
   }
 
   ngOnInit(): void {
     this._route.queryParams.subscribe((params) => {
+      console.log(params.type);
       switch (params.type) {
         case 'fire':
           this.color = '#d25353';
@@ -42,7 +44,11 @@ export class LayoutComponent implements OnInit {
         case 'ground':
           this.color = '#8a6058';
           break;
+        // case undefined: {
+        //   this._router.navigate(['pokemons/lista'], {queryParams: {type: 'fp'}});
+        // }
       }
-    });
+    })
+    ;
   }
 }
