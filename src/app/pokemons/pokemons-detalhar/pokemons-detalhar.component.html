@@ -1,15 +1,28 @@
 <div class="pokemon-detalhar-main">
   <div class="row">
-    <div class="col-8">
+    <div class="col-6" style="min-height: 485px;">
       <p-card>
         <ng-template pTemplate="header">
-        <span class="pokemon-detalhar-name" title="{{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}">
-          {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}</span>
+          <div class="pokemon-detalhar-name">
+            {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}
+            <div class="row icons-row">
+              <div [className]="'icon ' + typeOne">
+                <img [src]="'assets/typesBadge/'+typeOne+'.svg'">
+              </div>
+
+              <div [hidden]="typeTwo === ''" [className]="'icon ' + typeTwo">
+                <img [src]="typeTwo !== '' ? 'assets/typesBadge/'+typeTwo+'.svg' : ''">
+              </div>
+            </div>
+          </div>
 
         </ng-template>
 
         <ng-template pTemplate="body">
-
+          <div class="pokemon-detalhar-img-main">
+            <img class="pokemon-detalhar-img" alt="./assets/img/notfound.png"
+                 [src]="shiny? pokemon?.imgUrlShiny : pokemon?.imgUrl">
+          </div>
         </ng-template>
 
         <ng-template pTemplate="footer">
@@ -17,21 +30,72 @@
         </ng-template>
       </p-card>
     </div>
-    <div class="col-3">
+    <div class="col-5">
       <p-card>
         <ng-template pTemplate="header">
-        <span class="pokemon-detalhar-name" title="{{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}">
-          {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}</span>
-
+          <h3 class="pokemon-detalhar-details-header">Detalhes</h3>
+          <div class="pokemon-detalhar-buttons-main">
+            <button (click)="shiny = false" class="btn btn-primary">Normal</button>
+            <button (click)="shiny = true" class="btn btn-warning">Shiny</button>
+          </div>
         </ng-template>
 
         <ng-template pTemplate="body">
+              <span class="row col-12">
+                <span style="font-size: 25px;font-weight: bold">Preço:</span>
+                    <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$"><span
+                class="col-6 pokemon-list-price">{{shiny ? (pokemon?.price * 10).toFixed(2) : pokemon?.price}}</span>
+        </span>
+          <p-table styleClass="table-class" [value]="pokemon?.stats">
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width: 25%; font-size:12px ;text-align: center;">HP</th>
+                <th style="width: 25%; font-size:12px ;text-align: center;">ATK</th>
+                <th style="width: 25%; font-size:12px ;text-align: center;">DEF</th>
+                <th style="width: 25%; font-size:12px ;text-align: center;">SP-ATK</th>
+                <th style="width: 25%; font-size:12px ;text-align: center;">SP-DEF</th>
+                <th style="width: 25%; font-size:12px ;text-align: center;">SPD</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-k>
+              <th style="text-align: center;font-size:12px">{{k.base_stat}}</th>
+            </ng-template>
 
+          </p-table>
         </ng-template>
 
         <ng-template pTemplate="footer">
+          <div class="row">
+            <div class="col-6">
+              <div style="margin-left:3%;font-weight:bold">Lista de Habilidades:
+                <p-dropdown [style]="{'width':'100%'}" [options]="pokemon.movesPokemon" placeholder="Selecione..."
+                            [showClear]="true"
+                            optionLabel="name"></p-dropdown>
+              </div>
+            </div>
+            <div class="col-6">
+              <div [hidden]="pokemon.items?.length === 0">
+                <div style="font-weight:bold">Lista de Items:
+                  <p-dropdown [style]="{'width':'100%'}" [options]="pokemon.items" placeholder="Selecione..."
+                              [showClear]="true"
+                              optionLabel="name">
 
+                  </p-dropdown>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">  <span style="line-height: 3;
+                         font-size: 24px;
+                         left: 35px;
+                         position: absolute;">Peso: {{pokemon?.weight}}kg</span></div>
+
+          <p-button (click)="adicionarPokemon()" class="p-button-raised p-button-rounded pokemon-list-add-button"><fa-icon [icon]="faPlusCircle"></fa-icon>Adicionar
+
+          </p-button>
         </ng-template>
+
       </p-card>
     </div>
   </div>

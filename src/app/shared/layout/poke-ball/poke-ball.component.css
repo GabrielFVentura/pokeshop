@@ -1,13 +1,8 @@
 .poke-ball-header{
-  margin-left:auto;
-  margin-right:auto;
-  width:100%;
-  min-height: 100px;
-  line-height: 100px;
+  line-height: 3;
   text-align: center;
-  justify-content:center;
   font-family: Roboto, sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .p-card-content{
@@ -49,9 +44,16 @@
 }
 
 .poke-ball-card-list-body{
-  margin-top:-1%;
-  width:100%;
+  width: 110%;
+  min-width: 115px;
+  height: 100%;
+  min-height: 110px;
   background-color: #2d2d2d;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  margin-left: -5%;
+  align-content: center;
 }
 
 .poke-ball-list-counter{
@@ -90,7 +92,7 @@ li{
 .pokeball-pokemon-list-img{
   max-height: 5.5em;
   position: absolute;
-  left: 7.5%;
+  left: 5%;
 }
 
 .pokeball-pokemon-list-name{
@@ -101,7 +103,7 @@ li{
 
 .pokeball-pokemon-list-price{
   float:left;
-  font-size:1.0em;
+  font-size:1.3em;
   color:whitesmoke;
   line-height:1.2;
 }
@@ -122,17 +124,33 @@ li{
   margin-top: 10%;
 }
 
-.pokeball-pokemon-total-price{
-  margin-top:5%;
+.pokeball-pokemon-header{
   background-color: #bebe2a;
-  text-align: center;
-  line-height: 2.3;
-  position: absolute;
-  top: -23px;
-  min-width: 309px;
-  height: 80px;
+  min-width: 100px;
+  width: 100%;
+  min-height: 125px;
   color: black;
 }
+
+.pokeball-pokemon-total-price{
+  justify-content: center;
+  line-height:2.5;
+  font-size:25px
+}
+
+.pokeball-pokemon-total-cashback{
+  justify-content: center;
+  line-height:2.5;
+  font-size:20px
+}
+
+.pokeball-pokemon-pokedollar-img{
+  height: 10%;
+  width: 4.5% !important;
+  margin-top: 5.5%;
+  margin-left:1%;
+}
+
 
 
 

@@ -64,7 +64,6 @@ export class PokemonsListaComponent implements OnInit {
                 pok.id = pokemonBuscado.id;
                 pok.stats = pokemonBuscado.stats;
                 pok.price = ((pokemonBuscado.weight + pokemonBuscado.height) / (pokemonBuscado.id / 10)).toFixed(2);
-                // pok.imgUrl = pokemonBuscado.sprites.other['official-artwork'].front_default;
                 pok.imgUrl = pokemonBuscado.sprites.front_default;
               },
               (error) => console.error(error));
@@ -82,7 +81,6 @@ export class PokemonsListaComponent implements OnInit {
               pk.pokemon = {
                 name: p.name
               };
-
               pk.id = p.id;
               pk.stats = p.stats;
               pk.promo = (Math.floor(Math.random() * 50) + 1);
@@ -113,6 +111,7 @@ export class PokemonsListaComponent implements OnInit {
   // }
 
   adicionarPokemon(p: Pokemon): void {
+    console.log(p);
     this.service.SetPokemonEnviado(p);
   }
 }

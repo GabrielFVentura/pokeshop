@@ -21,29 +21,57 @@ export class LayoutComponent implements OnInit {
       console.log(params.type);
       switch (params.type) {
         case 'fire':
-          this.color = '#d25353';
+          this.color = '#FBA54C';
           break;
         case 'water':
-          this.color = '#809cec';
+          this.color = '#539DDF';
           break;
         case 'grass':
-          this.color = '#73e56c';
+          this.color = '#5FBD58';
           break;
         case 'electric':
-          this.color = '#decb68';
+          this.color = '#F2D94E';
           break;
         case 'dragon':
-          this.color = '#c3c1ad';
+          this.color = '#0C69C8';
           break;
         case 'flying':
-          this.color = '#c7b9d4';
+          this.color = '#A1BBEC';
           break;
         case 'poison':
-          this.color = '#ae71d9';
+          this.color = '#B763CF';
           break;
         case 'ground':
-          this.color = '#8a6058';
+          this.color = '#DA7C4D';
           break;
+        case 'rock':
+          this.color = '#C9BB8A';
+          break;
+        case 'bug':
+          this.color = '#92BC2C';
+          break;
+        case 'ghost':
+          this.color = '#5F6DBC';
+          break;
+        case 'steel':
+          this.color = '#5695A3';
+          break;
+        case 'psychic':
+          this.color = '#FA8581';
+          break;
+        case 'ice':
+          this.color = '#75D0C1';
+          break;
+        case 'fairy':
+          this.color = '#EE90E6';
+          break;
+        case 'dark':
+          this.color = '#595761';
+          break;
+        case 'fighting':
+          this.color = '#D3425F';
+          break;
+
         // case undefined: {
         //   this._router.navigate(['pokemons/lista'], {queryParams: {type: 'fp'}});
         // }

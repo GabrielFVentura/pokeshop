@@ -19,6 +19,8 @@ import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { PokeBallComponent } from './shared/layout/poke-ball/poke-ball.component';
 import { PokemonsDetalharComponent } from './pokemons/pokemons-detalhar/pokemons-detalhar.component';
+import {DropdownModule} from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -31,20 +33,22 @@ import { PokemonsDetalharComponent } from './pokemons/pokemons-detalhar/pokemons
     PokeBallComponent,
     PokemonsDetalharComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ButtonModule,
-    MenubarModule,
-    MenuModule,
-    ToastModule,
-    InputTextModule,
-    CardModule,
-    HttpClientModule,
-    TableModule,
-    FormsModule,
-    FontAwesomeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ButtonModule,
+        MenubarModule,
+        MenuModule,
+        ToastModule,
+        InputTextModule,
+        CardModule,
+        HttpClientModule,
+        TableModule,
+        FormsModule,
+        FontAwesomeModule,
+        DropdownModule,
+        BrowserAnimationsModule
+    ],
   providers: [MessageService],
   bootstrap: [AppComponent]
 })

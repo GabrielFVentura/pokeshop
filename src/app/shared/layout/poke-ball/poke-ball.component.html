@@ -1,26 +1,39 @@
 <p-card class="pokeball-pokemon-list-card col-12">
+
   <ng-template pTemplate="header">
     <h3 class="poke-ball-header">Pokelist</h3>
-    <div class="col-12">
-      <h2 class="pokeball-pokemon-total-price">Total: {{precoTotal.toFixed(2)}}</h2></div>
+    <div class="col-12 pokeball-pokemon-header">
+      <h5 class="pokeball-pokemon-total-price row"> Total:{{precoTotal.toFixed(2)}}
+        <img
+          class="pokeball-pokemon-pokedollar-img"
+          height="15"
+          src="./assets/img/pokeDollar.png">
+      </h5>
+      <h5 class="pokeball-pokemon-total-cashback row"> Cashback:123
+        <img
+          class="pokeball-pokemon-pokedollar-img"
+          height="15"
+          src="./assets/img/pokeDollar.png">
+      </h5>
+    </div>
   </ng-template>
 
-  <div style="margin-top:14%;background-color:#2d2d2d" class="card-pokemon">
-    <div style="height: 110px;background-color: #2d2d2d;color:whitesmoke"
-         *ngFor="let p of pokemonsAdicionados; let i = index" class="poke-ball-card-list-body">
+  <ng-template pTemplate="body">
+    <div *ngFor="let p of pokemonsAdicionados; let i = index" class="poke-ball-card-list-body">
       <ul class="pokeball-pokemon-list">
         <li class="pokeball-body">
           <a [routerLink]="['pokemons/detalhar']" [queryParams]="p?.id">
             <img class="pokeball-pokemon-list-img" src="{{p?.imgUrl}}" alt="./assets/img/notfound.png">
           </a>
           <div class="row pokeball-pokemon-row">
-            <div class="col-7">
+            <div class="col-5">
               <span
                 class="pokeball-pokemon-list-name"> {{p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1) }} </span>
-              <span class="pokeball-pokemon-list-price"> Preço: {{(p?.quantidade * p?.price).toFixed(2)}} <img height="15"
-                                                                                                  src="./assets/img/pokeDollar-white.png"></span>
+              <span class="pokeball-pokemon-list-price"> Preço: {{(p?.quantidade * p?.price).toFixed(2)}} <img
+                height="15"
+                src="./assets/img/pokeDollar-white.png"></span>
             </div>
-            <div class="col-5" style="margin-left: -10%;">
+            <div class="col-5">
               <span class="pokeball-pokemon-list-quant">Quantidade: {{p?.quantidade}}</span>
               <div class="pokeball-pokemon-list-btn">
                 <button (click)="adicionarQtdPokemon(p)" class="btn btn-sm btn-primary">+</button>
@@ -31,28 +44,5 @@
         </li>
       </ul>
     </div>
-    <!--    <p-card>-->
-    <!--      <div class="row">-->
-    <!--        <img class="poke-ball-list-img"-->
-    <!--             src="{{p.imgUrl}}">-->
-    <!--        <div class="poke-ball-list-name col-4">-->
-    <!--          {{p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1) }}-->
-    <!--        </div>-->
-    <!--        <span class="poke-ball-list-counter-number col-3">Qtd:1</span>-->
-    <!--        <button (click)="removerPokemon(p)" class="poke-ball-button-exclude btn-danger">-->
-    <!--          x-->
-    <!--        </button>-->
-    <!--      </div>-->
-    <!--      <div class="row">-->
-    <!--        <div class="row" style="margin-left:33%">-->
-    <!--          Preço: <img style="margin-top:5%;" height="15" src="./assets/img/pokeDollar.png" alt="$"><h5-->
-    <!--          class="poke-ball-list-price">{{p?.price}}</h5>-->
-    <!--        </div>-->
-    <!--        <div style="margin-left:5%">-->
-    <!--          <button style="margin-left:2px" class="btn btn-sm btn-primary">+</button>-->
-    <!--          <button class="btn btn-sm btn-danger">-</button>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </p-card>-->
-  </div>
+  </ng-template>
 </p-card>

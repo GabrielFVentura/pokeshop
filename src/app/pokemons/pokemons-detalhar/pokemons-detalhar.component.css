@@ -1,5 +1,59 @@
 .pokemon-detalhar-name{
-  font-size:35px;
-  line-height: 3;
-  margin:50%;
+  font-size: 45px;
+  line-height: 2.2;
+  text-align:center;
+  font-weight:bold;
 }
+
+.pokemon-detalhar-img-main{
+  text-align: center;
+  display: inherit;
+}
+
+.pokemon-detalhar-img{
+  height: auto;
+  width: auto;
+  min-width: 250px;
+}
+
+.pokemon-detalhar-buttons-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-detalhar-details-header{
+  text-align:center;
+  font-size: 45px;
+  margin-left:2%;
+  font-weight:bold;
+}
+
+.pokemon-list-add-button{
+  text-align:center;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  margin-top: 17%;
+}
+
+.pokemon-list-img{
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+.pokemon-list-price{
+  font-size: 26px;
+  margin-left: -2.5%;
+}
+
+.icons-row{
+  justify-content: center;
+  margin-right: 4%;
+}
+
+.pokemon-detalhar-main{
+  height:100%;
+  min-height:640px;
+}
+
