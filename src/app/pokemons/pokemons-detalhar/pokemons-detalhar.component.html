@@ -6,11 +6,11 @@
           <div class="pokemon-detalhar-name">
             {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}
             <div class="row icons-row">
-              <div [className]="'icon ' + typeOne">
+              <div [title]="typeOne" [className]="'icon ' + typeOne">
                 <img [src]="'assets/typesBadge/'+typeOne+'.svg'">
               </div>
 
-              <div [hidden]="typeTwo === ''" [className]="'icon ' + typeTwo">
+              <div [title]="typeTwo" [hidden]="typeTwo === ''" [className]="'icon ' + typeTwo">
                 <img [src]="typeTwo !== '' ? 'assets/typesBadge/'+typeTwo+'.svg' : ''">
               </div>
             </div>

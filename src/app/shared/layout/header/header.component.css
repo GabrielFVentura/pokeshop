@@ -3,12 +3,12 @@
   display: flex;
   position: fixed;
   width: 20.3%;
-  top: 16.1%;
+  top: 16.3%;
   right: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 80%;
-  transition: height 1s;
+  transition: height 0.5s;
 }
 
 .poke-ball-main-closed{
@@ -16,12 +16,12 @@
   display: flex;
   position: fixed;
   width: 20.3%;
-  top: 16.1%;
+  top: 16.3%;
   right: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   height:0;
-  transition: height 1s;
+  transition: height 0.5s;
 }
 
 .p-card-body{
@@ -46,4 +46,17 @@
   top:1.4%;
   height:8.1%;
   width:50%
+}
+
+.pokeball-pokemon-cashback{
+  position: fixed;
+  width: 160px;
+  top: 20%;
+  right: 12.5%;
+  border-radius: 0 5px 0 0;
+  transform: rotate(
+    -41deg
+  );
+  z-index: 1;
+  transition: visibility 1s;
 }

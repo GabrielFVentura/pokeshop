@@ -14,4 +14,6 @@
 
 <input style="" pInputText class="col-8 header-main__search" type="text" placeholder="Search">
 
+<div [hidden]="!open" class="col-6 btn-primary pokeball-pokemon-cashback">{{cashbackValue}}% de Cashback!</div>
+
 <app-poke-ball [class]="open ? 'poke-ball-main-open' : 'poke-ball-main-closed'"></app-poke-ball>

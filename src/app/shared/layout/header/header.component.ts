@@ -11,12 +11,14 @@ export class HeaderComponent implements OnInit {
   public color: string;
   public open: boolean;
   numItems: any;
+  cashbackValue: number;
 
   constructor(
     private service: PokemonService
   ) {
     this.color = 'white';
     this.open = false;
+    this.cashbackValue = 10;
   }
 
   ngOnInit(): void {
