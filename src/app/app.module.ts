@@ -22,7 +22,6 @@ import { PokemonsDetalharComponent } from './pokemons/pokemons-detalhar/pokemons
 import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,

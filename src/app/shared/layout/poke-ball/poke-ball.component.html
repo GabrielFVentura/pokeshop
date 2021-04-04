@@ -1,15 +1,18 @@
 <p-card class="pokeball-pokemon-list-card col-12">
   <ng-template pTemplate="header">
 
-    <h3 class="poke-ball-header">Pokelist</h3>
+    <h3 class="poke-ball-header">PokeList</h3>
+    <p-button (click)="finalizarCompras()" class="p-button-raised p-button-rounded pokemon-list-finalizar-button">Finalizar Compras</p-button>
+
     <div class="col-12 pokeball-pokemon-header">
-      <h5 class="pokeball-pokemon-total-price row">Total:{{precoTotal.toFixed(2)}}
+
+        <h5 class="pokeball-pokemon-total-price row">Total:{{precoTotal.toFixed(2)}}
       <img
         class="pokeball-pokemon-pokedollar-img"
         height="15"
         src="./assets/img/pokeDollar.png">
       </h5>
-      <h5 class="pokeball-pokemon-total-cashback row">Cashback:123
+      <h5 class="pokeball-pokemon-total-cashback row">Cashback:{{cashBackValue}}
       <img
         class="pokeball-pokemon-pokedollar-img"
         height="15"

@@ -111,7 +111,6 @@ export class PokemonsListaComponent implements OnInit {
   // }
 
   adicionarPokemon(p: Pokemon): void {
-    console.log(p);
     this.service.SetPokemonEnviado(p);
   }
 }

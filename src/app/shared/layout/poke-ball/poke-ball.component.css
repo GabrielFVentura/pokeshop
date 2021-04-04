@@ -147,10 +147,15 @@ li{
 .pokeball-pokemon-pokedollar-img{
   height: 10%;
   width: 5% !important;
-  margin-top: 5.5%;
+  margin-top: 4.5%;
   margin-left:1%;
 }
 
+.pokemon-list-finalizar-button{
+  top: 13.5%;
+  right: 28.5%;
+  position: absolute;
+}
 
 
 

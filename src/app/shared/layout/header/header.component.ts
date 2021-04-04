@@ -18,13 +18,15 @@ export class HeaderComponent implements OnInit {
   ) {
     this.color = 'white';
     this.open = false;
-    this.cashbackValue = 10;
+    this.cashbackValue = 0.10;
   }
 
   ngOnInit(): void {
     this.service.GetPokemonEnviado().subscribe(() => {
       this.open = true;
     });
+    localStorage.cashBackPercent = this.cashbackValue;
+    localStorage.cashBackValue = 50;
   }
 
   search($event: MouseEvent) {
