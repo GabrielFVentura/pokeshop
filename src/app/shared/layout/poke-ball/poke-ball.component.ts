@@ -16,6 +16,7 @@ export class PokeBallComponent implements OnInit {
   pokemonsAdicionados: any;
   precoTotal: number;
   cashBackValue: string;
+  mouseEvent: any;
 
   constructor(
     private service: PokemonService,
@@ -24,6 +25,7 @@ export class PokeBallComponent implements OnInit {
     this.pokemonsAdicionados = [];
     this.precoTotal = 0;
     this.cashBackValue = localStorage.cashBackValue;
+    this.mouseEvent = false;
   }
 
   ngOnInit(): void {

@@ -2,7 +2,12 @@
   <ng-template pTemplate="header">
 
     <h3 class="poke-ball-header">PokeList</h3>
-    <p-button (click)="finalizarCompras()" class="p-button-raised p-button-rounded pokemon-list-finalizar-button">Finalizar Compras</p-button>
+    <button type="button" (click)="finalizarCompras()"
+              icon="pi pi-check" label="Finalizar Compras" pButton
+              (mouseenter)="mouseEvent = true"
+              (mouseleave)="mouseEvent = false"
+              [ngClass]="mouseEvent ? 'p-button-raised p-button-danger pokemon-list-finalizar-button' : 'p-button-raised p-button-warning pokemon-list-finalizar-button'"
+              ></button>
 
     <div class="col-12 pokeball-pokemon-header">
 

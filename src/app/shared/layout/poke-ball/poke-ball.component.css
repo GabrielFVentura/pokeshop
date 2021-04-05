@@ -153,7 +153,13 @@ li{
 
 .pokemon-list-finalizar-button{
   top: 13.5%;
-  right: 28.5%;
+  right: 25.5%;
+  position: absolute;
+}
+
+.pokemon-list-finalizar-button:hover{
+  top: 13.5%;
+  right: 25.5%;
   position: absolute;
 }
 
