@@ -15,7 +15,8 @@ export class Pokemon {
   weight?: any;
   movesPokemon: any[];
   moves?: any[];
-  items?: any[];
+  items: any[];
   held_items: any[];
-
+  types: any;
 }
+

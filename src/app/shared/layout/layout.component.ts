@@ -18,7 +18,6 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.queryParams.subscribe((params) => {
-      console.log(params.type);
       switch (params.type) {
         case 'fire':
           this.color = '#FBA54C';
@@ -71,7 +70,6 @@ export class LayoutComponent implements OnInit {
         case 'fighting':
           this.color = '#D3425F';
           break;
-
         // case undefined: {
         //   this._router.navigate(['pokemons/lista'], {queryParams: {type: 'fp'}});
         // }

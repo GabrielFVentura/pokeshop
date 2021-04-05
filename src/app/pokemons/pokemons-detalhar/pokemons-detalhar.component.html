@@ -7,11 +7,11 @@
             {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}
             <div class="row icons-row">
               <div [title]="typeOne" [className]="'icon ' + typeOne">
-                <img [src]="'assets/typesBadge/'+typeOne+'.svg'">
+                <img [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
               </div>
 
               <div [title]="typeTwo" [hidden]="typeTwo === ''" [className]="'icon ' + typeTwo">
-                <img [src]="typeTwo !== '' ? 'assets/typesBadge/'+typeTwo+'.svg' : ''">
+                <img [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@
                          left: 35px;
                          position: absolute;">Peso: {{pokemon?.weight}}kg</span></div>
 
-          <p-button (click)="adicionarPokemon()" class="p-button-raised p-button-rounded pokemon-list-add-button"><fa-icon [icon]="faPlusCircle"></fa-icon>Adicionar
+          <p-button (click)="adicionarPokemon()" icon="pi pi-plus-circle" label="Adicionar" class="pokemon-list-add-button">
 
           </p-button>
         </ng-template>

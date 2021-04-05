@@ -23,7 +23,7 @@ export class PokeBallComponent implements OnInit {
   ) {
     this.pokemonsAdicionados = [];
     this.precoTotal = 0;
-    this.cashBackValue = parseFloat(localStorage.cashBackValue);
+    this.cashBackValue = localStorage.cashBackValue;
   }
 
   ngOnInit(): void {
@@ -86,7 +86,7 @@ export class PokeBallComponent implements OnInit {
       const precoPago = (this.precoTotal - parseFloat(localStorage.cashBackValue));
 
       if (parseFloat(localStorage.cashBackValue) > this.precoTotal) {
-        const csb = (parseFloat(localStorage.cashBackValue) - this.precoTotal + cashBack).toFixed(2)
+        const csb = (parseFloat(localStorage.cashBackValue) - this.precoTotal + cashBack).toFixed(2);
         this.pokemonsAdicionados = [];
         this.precoTotal = 0;
         localStorage.removeItem('pokemons');

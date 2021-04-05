@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Pokemon} from '../../../model/pokemon';
 import {PokemonService} from '../../pokemon-service/pokemon.service';
 import {ActivatedRoute} from '@angular/router';
-import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
-
 
 @Component({
   selector: 'app-pokemons-detalhar',
@@ -15,7 +13,6 @@ export class PokemonsDetalharComponent implements OnInit {
   public shiny: boolean;
   public typeOne: string;
   public typeTwo: string;
-  faPlusCircle = faPlusCircle;
 
   constructor(
     private service: PokemonService,
@@ -37,13 +34,15 @@ export class PokemonsDetalharComponent implements OnInit {
         this.pokemon.imgUrlShiny = p.sprites.front_shiny;
         this.typeOne = p.types[0].type.name !== undefined ? p.types[0].type.name : '';
 
-        if (p.types[1]) {
+        console.log(p);
+        console.log(p.types.length);
+        if (p.types.length > 1) {
           this.typeTwo = p.types[1].type.name;
+          console.log('type2', this.typeTwo);
         }
         this.pokemon.price = ((p.weight + p.height) / (p.id / 10)).toFixed(2);
         this.pokemon.movesPokemon = [];
         this.pokemon.items = [];
-        console.log(this.pokemon);
 
         this.pokemon.moves?.forEach((m: any) => {
           if (m?.move.name) {
@@ -51,7 +50,7 @@ export class PokemonsDetalharComponent implements OnInit {
           }
         });
 
-        this.pokemon.held_items?.forEach((i: any) => {
+        this.pokemon.held_items.forEach((i: any) => {
           if (this.pokemon.items !== undefined) {
             this.pokemon.items.push(i.item);
           }

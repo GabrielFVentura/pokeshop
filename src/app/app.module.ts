@@ -21,6 +21,7 @@ import { PokeBallComponent } from './shared/layout/poke-ball/poke-ball.component
 import { PokemonsDetalharComponent } from './pokemons/pokemons-detalhar/pokemons-detalhar.component';
 import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         FontAwesomeModule,
         DropdownModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        AutoCompleteModule
     ],
   providers: [MessageService],
   bootstrap: [AppComponent]
