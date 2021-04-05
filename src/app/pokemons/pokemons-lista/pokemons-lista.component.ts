@@ -76,8 +76,6 @@ export class PokemonsListaComponent implements OnInit {
 
         randomArray(10, 898).forEach(r => {
           this.service.BuscarPokemonPorId(r).subscribe(p => {
-              console.log(p);
-
               const pk = new Pokemon();
               pk.pokemon = {
                 name: p.name
@@ -88,7 +86,6 @@ export class PokemonsListaComponent implements OnInit {
               pk.price = ((10 * (p.weight + p.height) / (p.id / 10)).toFixed(2)) as any;
               pk.price = Math.floor(((pk.price * pk.promo) / 100)).toFixed(2);
               pk.imgUrl = p.sprites.front_shiny;
-              console.log(pk.imgUrl);
 
               this.pokemons.push(pk);
             }, (e) => console.error(e),

@@ -34,11 +34,8 @@ export class PokemonsDetalharComponent implements OnInit {
         this.pokemon.imgUrlShiny = p.sprites.front_shiny;
         this.typeOne = p.types[0].type.name !== undefined ? p.types[0].type.name : '';
 
-        console.log(p);
-        console.log(p.types.length);
         if (p.types.length > 1) {
           this.typeTwo = p.types[1].type.name;
-          console.log('type2', this.typeTwo);
         }
         this.pokemon.price = ((p.weight + p.height) / (p.id / 10)).toFixed(2);
         this.pokemon.movesPokemon = [];

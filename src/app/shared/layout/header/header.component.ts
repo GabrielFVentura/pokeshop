@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
     this.open = false;
     this.cashbackValue = 0.10;
     this.pokemons = new PokemonList().pokemons;
-    console.log(this.pokemons);
   }
 
   ngOnInit(): void {
@@ -37,7 +36,6 @@ export class HeaderComponent implements OnInit {
   }
 
   search(event: any): void {
-    console.log(event);
     this.pokemonsFiltrados = this.pokemons.filter((p: any) => {
       return p.name.toLowerCase().startsWith(event.query.toLowerCase());
     });
