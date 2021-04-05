@@ -18,5 +18,6 @@ export class Pokemon {
   items: any[];
   held_items: any[];
   types: any;
+  height?: any;
 }
 

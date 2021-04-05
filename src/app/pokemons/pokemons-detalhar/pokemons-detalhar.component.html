@@ -86,12 +86,19 @@
               </div>
             </div>
           </div>
-          <div class="row">  <span style="line-height: 3;
-                         font-size: 24px;
-                         left: 35px;
-                         position: absolute;">Peso: {{pokemon?.weight}}kg</span></div>
+          <div class="row">
+            <span style="line-height: 3;
+                        font-size: 24px;
+                        left: 6.5%;
+                        position: absolute;">Peso: {{(pokemon?.weight * 0.45).toFixed(2)}}Kg</span>
 
-          <p-button (click)="adicionarPokemon()" icon="pi pi-plus-circle" label="Adicionar" class="pokemon-list-add-button">
+            <span style="line-height: 3;
+                         font-size: 24px;
+                         right: 30%;
+                         position: absolute;;">Altura: {{(pokemon?.height / 10).toFixed(2)}}m</span></div>
+
+          <p-button (click)="adicionarPokemon()" icon="pi pi-plus-circle" label="Adicionar"
+                    class="pokemon-list-add-button">
 
           </p-button>
         </ng-template>
