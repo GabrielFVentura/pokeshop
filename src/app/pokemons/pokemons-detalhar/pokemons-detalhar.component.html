@@ -10,7 +10,7 @@
                 <img [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
               </div>
 
-              <div [title]="typeTwo" [hidden]="typeTwo === ''" [className]="'icon ' + typeTwo">
+              <div [title]="typeTwo" [hidden]="pokemon.types.length === 1" [className]="'icon ' + typeTwo">
                 <img [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
               </div>
             </div>

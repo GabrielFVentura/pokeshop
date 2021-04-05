@@ -27,10 +27,11 @@ export class PokemonsDetalharComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.typeTwo = '';
     this._route.queryParams.subscribe((params) => {
       this.service.BuscarPokemonPorId(params.id).subscribe(p => {
-        this.pokemon = p;
         console.log(p);
+        this.pokemon = p;
         this.pokemon.imgUrl = p.sprites.front_default;
         this.pokemon.imgUrlShiny = p.sprites.front_shiny;
         this.typeOne = p.types[0].type.name !== undefined ? p.types[0].type.name : '';
