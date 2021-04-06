@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import {PokemonService} from '../../../pokemon-service/pokemon.service';
 import {Pokemon} from '../../../../model/pokemon';
 import {MessageService} from 'primeng/api';
@@ -12,7 +11,6 @@ import {MessageService} from 'primeng/api';
   encapsulation: ViewEncapsulation.None
 })
 export class PokeBallComponent implements OnInit {
-  faTimes = faTimes;
   pokemonsAdicionados: any;
   precoTotal: number;
   cashBackValue: string;

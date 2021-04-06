@@ -5,13 +5,11 @@ export class Pokemon {
   imgUrlShiny?: string;
   pokemon?: any;
   price?: any;
-  priceShiny?: any;
   slot?: string;
   stats?: any;
   promo?: number;
   name?: any;
   typeOne?: any;
-  typeTwo?: any;
   weight?: any;
   movesPokemon: any[];
   moves?: any[];

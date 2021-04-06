@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { SubHeaderComponent } from './shared/layout/subheader/sub-header.component';
 import {FormsModule} from '@angular/forms';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { PokeBallComponent } from './shared/layout/poke-ball/poke-ball.component';
 import { PokemonsDetalharComponent } from './pokemons/pokemons-detalhar/pokemons-detalhar.component';
 import {DropdownModule} from 'primeng/dropdown';
@@ -45,7 +44,6 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
         HttpClientModule,
         TableModule,
         FormsModule,
-        FontAwesomeModule,
         DropdownModule,
         BrowserAnimationsModule,
         AutoCompleteModule

@@ -43,7 +43,7 @@
         <ng-template pTemplate="body">
               <span class="row col-12">
                 <span style="font-size: 25px;font-weight: bold">Preço:</span>
-                    <img alt="$" class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" ><span
+                    <img alt="$" class="pokemon-list-img" height="20" width="15" src="./assets/img/pokeDollar.png" ><span
                 class="col-6 pokemon-list-price">{{shiny ? (pokemon?.price * 10).toFixed(2) : pokemon?.price}}</span>
 
                 <span *ngIf="pokemon.promo !== 0" class="pokemon-list-promo">-{{pokemon.promo}}%</span>
