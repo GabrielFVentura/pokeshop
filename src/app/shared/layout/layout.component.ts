@@ -33,7 +33,6 @@ export class LayoutComponent implements OnInit {
 
     this._route.queryParams.subscribe((params) => {
       this.currentType = params.type;
-      console.log(this.currentType)
       if (params.id) {
         this.service.BuscarPokemonPorId(params.id).subscribe(p => {
           switch (p.types[0].type.name) {
