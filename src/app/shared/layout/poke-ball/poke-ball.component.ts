@@ -113,7 +113,7 @@ export class PokeBallComponent implements OnInit {
           detail: `Compra realizada com sucesso! Valor pago ${precoPago.toFixed(2)} e ${cashBack} de cashback adicionado na carteira!`
         });
       }
-    } else {
+    } else if (this.pokemonsAdicionados.length === 0) {
       this.message.add({
         severity: 'warn',
         summary: 'PokeList Vazia!',

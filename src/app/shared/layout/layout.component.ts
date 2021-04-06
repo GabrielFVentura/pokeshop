@@ -130,6 +130,8 @@ export class LayoutComponent implements OnInit {
             this.color = '#D3425F';
             break;
         }
+      } else {
+        this._router.navigate(['pokemons/lista'], { queryParams : {type: 'fp'}});
       }
     });
   }

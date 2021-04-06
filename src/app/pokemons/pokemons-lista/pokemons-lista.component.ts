@@ -63,7 +63,7 @@ export class PokemonsListaComponent implements OnInit {
             this.service.BuscarPokemonPorNome(pok.pokemon.name).subscribe(pokemonBuscado => {
                 pok.id = pokemonBuscado.id;
                 pok.stats = pokemonBuscado.stats;
-                pok.price = ((pokemonBuscado.weight + pokemonBuscado.height) / (pokemonBuscado.id / 10)).toFixed(2);
+                pok.price = ( 10 * (pokemonBuscado.weight + pokemonBuscado.height) / (pokemonBuscado.id / 10)).toFixed(2);
                 pok.imgUrl = pokemonBuscado.sprites.front_default;
               },
               (error) => console.error(error));
@@ -83,7 +83,7 @@ export class PokemonsListaComponent implements OnInit {
               pk.id = p.id;
               pk.stats = p.stats;
               pk.promo = (Math.floor(Math.random() * 50) + 1);
-              pk.price = ((10 * (p.weight + p.height) / (p.id / 10)).toFixed(2)) as any;
+              pk.price = ((100 * (p.weight + p.height) / (p.id / 10)).toFixed(2)) as any;
               pk.price = Math.floor(((pk.price * pk.promo) / 100)).toFixed(2);
               pk.imgUrl = p.sprites.front_shiny;
 

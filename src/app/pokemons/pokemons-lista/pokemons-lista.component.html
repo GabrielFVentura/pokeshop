@@ -12,10 +12,10 @@
           <span *ngIf="p.promo > 0" class="pokemon-list-promo">-{{p?.promo}}%</span>
         </span>
 
-        <span class="row col-12">
-          <span class="col-6 pokemon-list-price" style="">{{p?.price}}</span>
-          <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$">
-        </span>
+        <div class="row col-12">
+          <h4 class="col-12 pokemon-list-price">{{p?.price}}
+          <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$"></h4>
+        </div>
       </span>
 
       <p-table styleClass="table-class" [value]="p?.stats">

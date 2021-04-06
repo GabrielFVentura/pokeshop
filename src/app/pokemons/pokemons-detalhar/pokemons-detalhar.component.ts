@@ -39,7 +39,7 @@ export class PokemonsDetalharComponent implements OnInit {
         if (p.types.length > 1) {
           this.typeTwo = p.types[1].type.name;
         }
-        this.pokemon.price = ((p.weight + p.height) / (p.id / 10)).toFixed(2);
+        this.pokemon.price = ( 10 * (p.weight + p.height) / (p.id / 10)).toFixed(2);
         this.pokemon.movesPokemon = [];
         this.pokemon.items = [];
 
