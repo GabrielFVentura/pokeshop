@@ -57,3 +57,12 @@
   min-height:640px;
 }
 
+.pokemon-list-promo{
+  background-color:red;
+  color:ghostwhite;
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+

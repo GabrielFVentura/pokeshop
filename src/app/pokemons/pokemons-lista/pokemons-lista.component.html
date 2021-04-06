@@ -9,7 +9,7 @@
       </ng-template>
       <span class="row col-12 pokemon-list-row">
         <span title="{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}" class="pokemon-list-name col-12">{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}
-          <span *ngIf="p.promo > 0" class="pokemon-list-promo">-{{p?.promo}}%</span>
+          <span *ngIf="p.promo !== 0" class="pokemon-list-promo">-{{p?.promo}}%</span>
         </span>
 
         <div class="row col-12">

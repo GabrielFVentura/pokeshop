@@ -30,8 +30,8 @@
         </ng-template>
       </p-card>
     </div>
-    <div class="col-5">
-      <p-card>
+    <div class="col-6">
+      <p-card [style]="{'width': '91.3%'}">
         <ng-template pTemplate="header">
           <h3 class="pokemon-detalhar-details-header">Detalhes</h3>
           <div class="pokemon-detalhar-buttons-main">
@@ -45,6 +45,8 @@
                 <span style="font-size: 25px;font-weight: bold">Preço:</span>
                     <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$"><span
                 class="col-6 pokemon-list-price">{{shiny ? (pokemon?.price * 10).toFixed(2) : pokemon?.price}}</span>
+
+                <span *ngIf="pokemon.promo !== 0" class="pokemon-list-promo">-{{pokemon.promo}}%</span>
         </span>
           <p-table styleClass="table-class" [value]="pokemon?.stats">
             <ng-template pTemplate="header">

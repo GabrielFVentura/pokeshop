@@ -7,11 +7,9 @@ import {MenuItem} from 'primeng/api';
   styleUrls: ['./sub-header.component.css']
 })
 export class SubHeaderComponent implements OnInit {
-  public color: string;
   public items: MenuItem[] = [];
 
   constructor() {
-    this.color = 'white';
   }
 
   ngOnInit(): void {

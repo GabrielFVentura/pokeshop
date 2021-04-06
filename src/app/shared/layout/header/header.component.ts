@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
-  public color: string;
   public open: boolean;
   numItems: any;
   cashbackValue: number;
@@ -21,7 +20,6 @@ export class HeaderComponent implements OnInit {
     private service: PokemonService,
     private _router: Router,
 ) {
-    this.color = 'white';
     this.open = false;
     this.cashbackValue = 0.10;
     this.pokemons = new PokemonList().pokemons;

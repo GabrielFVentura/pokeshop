@@ -9,17 +9,30 @@ import {PokemonService} from '../../pokemon-service/pokemon.service';
 })
 export class LayoutComponent implements OnInit {
   public color: string;
+  public colorText!: string;
+  public currentType: string;
 
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private service: PokemonService
   ) {
-    this.color = 'white';
+    this.color = 'rgb(238, 238, 238)';
+    this.currentType = '';
   }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.colorText = 'red';
+    }, 750);
+
+    setInterval(() => {
+      this.colorText = 'blue';
+    }, 1500);
+
+
     this._route.queryParams.subscribe((params) => {
+      this.currentType = params.type;
       if (params.id) {
         this.service.BuscarPokemonPorId(params.id).subscribe(p => {
           switch (p.types[0].type.name) {
@@ -40,6 +53,9 @@ export class LayoutComponent implements OnInit {
               break;
             case 'flying':
               this.color = '#A1BBEC';
+              break;
+            case 'normal':
+              this.color = '#A0A29F';
               break;
             case 'poison':
               this.color = '#B763CF';
@@ -74,6 +90,9 @@ export class LayoutComponent implements OnInit {
             case 'fighting':
               this.color = '#D3425F';
               break;
+            default:
+              this.color = 'rgb(238, 238, 238)';
+              break;
           }
         });
       } else if (params.type) {
@@ -95,6 +114,9 @@ export class LayoutComponent implements OnInit {
             break;
           case 'flying':
             this.color = '#A1BBEC';
+            break;
+          case 'normal':
+            this.color = '#A0A29F';
             break;
           case 'poison':
             this.color = '#B763CF';
@@ -128,6 +150,9 @@ export class LayoutComponent implements OnInit {
             break;
           case 'fighting':
             this.color = '#D3425F';
+            break;
+          default:
+            this.color = 'rgb(238, 238, 238)';
             break;
         }
       } else {

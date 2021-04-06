@@ -20,6 +20,7 @@ export class PokemonsDetalharComponent implements OnInit {
   ) {
     this.pokemon = new Pokemon();
     this.pokemon.name = '';
+    this.pokemon.types = [];
     this.typeOne = '';
     this.typeTwo = '';
     this.shiny = false;
@@ -36,10 +37,15 @@ export class PokemonsDetalharComponent implements OnInit {
         this.pokemon.imgUrlShiny = p.sprites.front_shiny;
         this.typeOne = p.types[0].type.name !== undefined ? p.types[0].type.name : '';
 
+        this.pokemon.promo = 0;
+        if (this.typeOne === 'fire'){
+          this.pokemon.promo = 25;
+        }
         if (p.types.length > 1) {
           this.typeTwo = p.types[1].type.name;
         }
-        this.pokemon.price = ( 10 * (p.weight + p.height) / (p.id / 10)).toFixed(2);
+        this.pokemon.price = ((10 * (p.weight + p.height)) * ((100 - this.pokemon.promo) / 100)
+          / (p.id / 10)).toFixed(2);
         this.pokemon.movesPokemon = [];
         this.pokemon.items = [];
 

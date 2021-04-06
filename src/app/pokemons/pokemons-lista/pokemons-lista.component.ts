@@ -11,8 +11,6 @@ import {Pokemon} from '../../../model/pokemon';
 })
 
 export class PokemonsListaComponent implements OnInit {
-  public pokemon1: any;
-  public pokemon2: any;
   public pokemons: any[];
   public pokemonsBuscados: any[];
   public promoMainPage: boolean;
@@ -63,7 +61,12 @@ export class PokemonsListaComponent implements OnInit {
             this.service.BuscarPokemonPorNome(pok.pokemon.name).subscribe(pokemonBuscado => {
                 pok.id = pokemonBuscado.id;
                 pok.stats = pokemonBuscado.stats;
-                pok.price = ( 10 * (pokemonBuscado.weight + pokemonBuscado.height) / (pokemonBuscado.id / 10)).toFixed(2);
+                pok.promo = 0;
+                if (pokemonBuscado.types[0].type.name === 'fire'){
+                  pok.promo = 25;
+                }
+                pok.price = ((10 * (pokemonBuscado.weight + pokemonBuscado.height)) * ((100 - pok.promo) / 100)
+                                    / (pokemonBuscado.id / 10)).toFixed(2);
                 pok.imgUrl = pokemonBuscado.sprites.front_default;
               },
               (error) => console.error(error));
