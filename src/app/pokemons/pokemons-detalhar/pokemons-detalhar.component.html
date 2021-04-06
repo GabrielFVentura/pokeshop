@@ -7,11 +7,11 @@
             {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}
             <div class="row icons-row">
               <div [title]="typeOne" [className]="'icon ' + typeOne">
-                <img [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
+                <img alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
               </div>
 
               <div [title]="typeTwo" [hidden]="pokemon.types.length === 1" [className]="'icon ' + typeTwo">
-                <img [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
+                <img alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
               </div>
             </div>
           </div>
@@ -20,7 +20,7 @@
 
         <ng-template pTemplate="body">
           <div class="pokemon-detalhar-img-main">
-            <img class="pokemon-detalhar-img" alt="./assets/img/notfound.png"
+            <img [alt]="'imagem do pokemon ' + pokemon?.name" class="pokemon-detalhar-img"
                  [src]="shiny? pokemon?.imgUrlShiny : pokemon?.imgUrl">
           </div>
         </ng-template>
@@ -43,7 +43,7 @@
         <ng-template pTemplate="body">
               <span class="row col-12">
                 <span style="font-size: 25px;font-weight: bold">Preço:</span>
-                    <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$"><span
+                    <img alt="$" class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" ><span
                 class="col-6 pokemon-list-price">{{shiny ? (pokemon?.price * 10).toFixed(2) : pokemon?.price}}</span>
 
                 <span *ngIf="pokemon.promo !== 0" class="pokemon-list-promo">-{{pokemon.promo}}%</span>

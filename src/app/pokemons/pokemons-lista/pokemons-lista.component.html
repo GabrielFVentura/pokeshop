@@ -4,7 +4,7 @@
     <p-card styleClass="pokemonlist-card" class="col-12">
       <ng-template pTemplate="header">
         <a [routerLink]="['/pokemons/detalhar']" [queryParams]="{id:p?.id}" data-toggle="tooltip" role="button">
-          <img alt="./assets/img/notfound.png" height="40%" [src]="p?.imgUrl">
+          <img [alt]="'imagem do pokemon ' + p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)" height="40%" [src]="p?.imgUrl">
         </a>
       </ng-template>
       <span class="row col-12 pokemon-list-row">
@@ -14,7 +14,7 @@
 
         <div class="row col-12">
           <h4 class="col-12 pokemon-list-price">{{p?.price}}
-          <img class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" alt="$"></h4>
+          <img alt="$" class="pokemon-list-img" height="20" src="./assets/img/pokeDollar.png" ></h4>
         </div>
       </span>
 
@@ -33,7 +33,6 @@
           <th style="text-align: center;font-size:9px">{{k.base_stat}}</th>
         </ng-template>
       </p-table>
-
 
       <ng-template pTemplate="footer">
         <p-button class="pokemon-list-add-button" (click)="adicionarPokemon(p);" label="Adicionar"

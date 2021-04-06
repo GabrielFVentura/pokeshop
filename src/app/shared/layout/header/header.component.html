@@ -1,14 +1,15 @@
 <p-menubar [style]="{'font-size': '35px', 'height':'5%','background-color':'red','margin':'-5px'}"
            styleClass="header__main">
   <ng-template pTemplate="start">
-    <img routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80"
-         class="p-mr-2" alt="brand logo">
+    <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80"
+         class="p-mr-2" >
   </ng-template>
 
   <ng-template pTemplate="end">
-    <img (click)="togglePokeBall()"
+    <img alt="pokeball image"
+         (click)="togglePokeBall()"
          [src]="open ? './assets/img/poke_ball--open.png' : './assets/img/poke_ball--closed.png'"
-         [height]="open ? '80': '60'" class="p-mr-2" alt="poke ball img"
+         [height]="open ? '80': '60'" class="p-mr-2"
          [ngClass]="open ? 'poke-ball-open' : 'poke-ball-closed'" (mouseover)="open = true">
   </ng-template>
 </p-menubar>

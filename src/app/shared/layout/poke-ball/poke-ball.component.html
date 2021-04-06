@@ -12,13 +12,13 @@
     <div class="col-12 pokeball-pokemon-header">
 
         <h5 class="pokeball-pokemon-total-price row">Total:{{precoTotal.toFixed(2)}}
-      <img
+      <img alt="$"
         class="pokeball-pokemon-pokedollar-img"
         height="15"
         src="./assets/img/pokeDollar.png">
       </h5>
       <h5 class="pokeball-pokemon-total-cashback row">Cashback:{{cashBackValue}}
-      <img
+      <img alt="$"
         class="pokeball-pokemon-pokedollar-img"
         height="15"
         src="./assets/img/pokeDollar.png">
@@ -31,13 +31,14 @@
       <ul class="pokeball-pokemon-list">
         <li class="pokeball-body">
           <a [routerLink]="['pokemons/detalhar']" [queryParams]="p?.id">
-            <img class="pokeball-pokemon-list-img" src="{{p?.imgUrl}}" alt="./assets/img/notfound.png">
+            <img class="pokeball-pokemon-list-img" src="{{p?.imgUrl}}" [alt]="p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)">
           </a>
           <div class="row pokeball-pokemon-row">
             <div class="col-5">
               <span
                 class="pokeball-pokemon-list-name"> {{p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1) }} </span>
-              <span class="pokeball-pokemon-list-price"> Preço: {{(p?.quantidade * p?.price).toFixed(2)}} <img
+              <span class="pokeball-pokemon-list-price"> Preço: {{(p?.quantidade * p?.price).toFixed(2)}}
+                <img alt="$"
                 height="15"
                 src="./assets/img/pokeDollar-white.png"></span>
             </div>
