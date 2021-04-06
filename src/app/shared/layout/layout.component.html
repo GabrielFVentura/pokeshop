@@ -1,8 +1,8 @@
 <app-header></app-header>
-<main [style]="'background-color:'+color">
+<main [className]="currentType === 'fp' ? 'rainbow-background' : '' " [style]="'background-color:'+color">
 <app-sub-header></app-sub-header>
   <div class="container col-8">
-    <div [hidden]="currentType === undefined" class="promos">
+    <div [hidden]="currentType === undefined">
       <p-card [hidden]="currentType !== 'fp'" [style]="{'background-color':'#fbfbfb','width':'95.7%'}">
       <div class="promo-header html-rainbow-text" style="text-align: center;">
         <span style="color:#9400D3">P</span><span style="color:#4B0082">r</span><span style="color:#0000FF">o</span><span style="color:#00FF00">m</span><span style="color:#FFFF00">o</span><span style="color:#FF7F00">ç</span><span style="color:#FF0000">ã</span><span style="color:#FF7F00">o</span><span style="color: transparent;text-shadow: none;">&nbsp;</span><span style="color:#FFFF00">S</span><span style="color:#00FF00">h</span><span style="color:#0000FF">i</span><span style="color:#4B0082">n</span><span style="color:#9400D3">i</span><span style="color:#4B0082">e</span><span style="color:#0000FF">s</span>
