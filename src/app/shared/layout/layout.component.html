@@ -1,5 +1,5 @@
 <app-header></app-header>
-<main [className]="currentType === 'fp' ? 'rainbow-background' : '' " [style]="'background-color:'+color">
+<main [className]="currentType === 'fp' ? 'rainbow-background' : '' " [style]="currentType === 'fp' ? '' : 'background-color:'+color">
 <app-sub-header></app-sub-header>
   <div class="container col-8">
     <div [hidden]="currentType === undefined">
