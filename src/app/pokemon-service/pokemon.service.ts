@@ -14,7 +14,8 @@ const headersString = {
     'X-Requested-With, ' +
     'Content-Type, ' +
     'Access-Control-Request-Method, ' +
-    'Access-Control-Request-Headers'
+    'Access-Control-Request-Headers',
+    'Cache-Control': 'max-age=3600'
 };
 
 const httpOptions = {
@@ -24,7 +25,6 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-
 
 export class PokemonService {
   public subject = new Subject<Pokemon>();
