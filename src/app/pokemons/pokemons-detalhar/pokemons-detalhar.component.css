@@ -54,7 +54,7 @@
 
 .pokemon-detalhar-main{
   height:100%;
-  min-height:640px;
+  min-height:744px;
 }
 
 .pokemon-list-promo{
@@ -62,7 +62,10 @@
   color:ghostwhite;
   font-size: 15px;
   position: absolute;
-  right: 0;
-  top: 10px;
+  right: 0%;
+  transform: rotate(
+    29deg
+  );
+  border-radius:55%;
 }
 

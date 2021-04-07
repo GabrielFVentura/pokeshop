@@ -14,13 +14,14 @@
 
 .rainbow-background {
   height: 100%;
-  width: 95.8%;
+  width: 93.6%;
   min-height:140px;
   left:0;
   right: 0;
   top: 0;
   bottom: 0;
   position: relative;
+  margin-left:2.2%;
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
   background-size: 1800% 1800%;
 
@@ -49,4 +50,17 @@
   0%{background-position:0% 82%}
   50%{background-position:100% 19%}
   100%{background-position:0% 82%}
+}
+
+.container{
+  display: flex;
+  min-height: 1px;
+  flex-direction: column;
+  height:100%;
+  background-size:contain;
+  overflow-y:auto;
+}
+
+html{
+  margin:0;
 }

@@ -1,19 +1,23 @@
-<div class="row pokemon-list-row">
-  <div class="pokemon-card" *ngFor="let p of pokemons; let i = index">
+<div class="col-12">
+  <div class="pokemon-card row pokemon-list-row"  *ngFor="let p of pokemons; let i = index">
 
-    <p-card styleClass="pokemonlist-card" class="col-12">
+    <p-card>
       <ng-template pTemplate="header">
+
+      <div [style]="{'min-height':'210px'}">
         <a [routerLink]="['/pokemons/detalhar']" [queryParams]="{id:p?.id}" data-toggle="tooltip" role="button">
           <img [alt]="'imagem do pokemon ' + p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)" height="40%" [src]="p?.imgUrl">
         </a>
+      </div>
+
       </ng-template>
-      <span class="row col-12 pokemon-list-row">
+      <span class="row" style="width:100%">
         <span title="{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}" class="pokemon-list-name col-12">{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}
-          <span *ngIf="p.promo !== 0" class="pokemon-list-promo">-{{p?.promo}}%</span>
         </span>
 
-        <div class="row col-12">
+        <div class="row col-12" style="max-width: 100%">
           <h4 class="col-12 pokemon-list-price">{{p?.price}}
+            <span *ngIf="p.promo !== 0" class="pokemon-list-promo">-{{p?.promo}}%</span>
           <img alt="$" class="pokemon-list-img" height="20" width="15" src="./assets/img/pokeDollar.png" ></h4>
         </div>
       </span>
@@ -39,6 +43,5 @@
                   icon="pi pi-plus-circle"></p-button>
       </ng-template>
     </p-card>
-
   </div>
 </div>
