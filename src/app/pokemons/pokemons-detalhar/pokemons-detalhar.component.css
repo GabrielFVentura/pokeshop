@@ -62,6 +62,8 @@
   color:ghostwhite;
   font-size: 15px;
   position: absolute;
+  min-width: 7%;
+  text-align: center;
   right: 0%;
   transform: rotate(
     29deg

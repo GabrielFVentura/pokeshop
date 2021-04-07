@@ -41,7 +41,7 @@
 }
 
 .header-main__search{
-  position: absolute;
+  position: relative;
   left: 25%;
   top:1.4%;
   height:8.1%;

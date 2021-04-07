@@ -1,9 +1,17 @@
-<p-menubar [style]="{'font-size': '35px', 'height':'5%','background-color':'red','margin':'-5px'}"
-           styleClass="header__main">
+<p-menubar [style]="{'font-size': '35px', 'height':'5%','background-color':'red','margin':'-5px'}">
   <ng-template pTemplate="start">
-    <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80" width="250"
-         class="p-mr-2" >
+   <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80" width="250"
+         class="p-mr-2" style="float:left" >
+    <div style="position: absolute;
+                left: 10%;
+                top: 1%;
+                width: 50%;">
+      <p-autoComplete (onSelect)="select($event)" (completeMethod)="search($event)" [dropdown]="true"
+                      [suggestions]="pokemonsFiltrados" placeholder="Nome do Pokemon" [style]="{'width':'100%'}"
+                      class="col-8 header-main__search" field="name" [minLength]="1"></p-autoComplete>
+    </div>
   </ng-template>
+
 
   <ng-template pTemplate="end">
     <img alt="pokeball image"
@@ -16,8 +24,6 @@
 
 <div [hidden]="!open" class="col-8 btn-primary pokeball-pokemon-cashback">{{cashbackValue * 100}}% de Cashback!</div>
 
-<p-autoComplete (onSelect)="select($event)" (completeMethod)="search($event)" [dropdown]="true"
-                [suggestions]="pokemonsFiltrados" placeholder="Nome do Pokemon" [style]="{'width':'100%'}"
-                class="col-8 header-main__search" field="name" [minLength]="1"></p-autoComplete>
+
 
 <app-poke-ball [class]="open ? 'poke-ball-main-open' : 'poke-ball-main-closed'"></app-poke-ball>
