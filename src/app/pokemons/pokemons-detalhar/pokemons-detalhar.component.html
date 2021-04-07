@@ -20,6 +20,8 @@
 
         <ng-template pTemplate="body">
           <div class="pokemon-detalhar-img-main">
+            <img *ngIf="id !== 1" (click)="anteriorPokemonDetalhar()" alt="arrow left" src="assets/img/poke-arrow-f.png" class="pokemon-detalhar-arrow-left">
+            <img *ngIf="id !== 898" (click)="proxPokemonDetalhar()" alt="arrow right" src="assets/img/poke-arrow-f.png" class="pokemon-detalhar-arrow-right">
             <img [alt]="'imagem do pokemon ' + pokemon?.name" class="pokemon-detalhar-img"
                  [src]="shiny? pokemon?.imgUrlShiny : pokemon?.imgUrl">
           </div>

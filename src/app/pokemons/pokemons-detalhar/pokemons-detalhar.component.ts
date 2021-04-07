@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Pokemon} from '../../../model/pokemon';
 import {PokemonService} from '../../pokemon-service/pokemon.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-pokemons-detalhar',
@@ -13,25 +13,28 @@ export class PokemonsDetalharComponent implements OnInit {
   public shiny: boolean;
   public typeOne: string;
   public typeTwo: string;
+  public id: number;
 
   constructor(
     private service: PokemonService,
-    private _route: ActivatedRoute
-  ) {
+    private _route: ActivatedRoute,
+    private _router: Router
+) {
     this.pokemon = new Pokemon();
     this.pokemon.name = '';
     this.pokemon.types = [];
     this.typeOne = '';
     this.typeTwo = '';
     this.shiny = false;
+    this.id = 0;
   }
 
 
   ngOnInit(): void {
     this.typeTwo = '';
     this._route.queryParams.subscribe((params) => {
+      this.id = +params.id;
       this.service.BuscarPokemonPorId(params.id).subscribe(p => {
-        console.log(p);
         this.pokemon = p;
         this.pokemon.imgUrl = p.sprites.front_default;
         this.pokemon.imgUrlShiny = p.sprites.front_shiny;
@@ -78,5 +81,13 @@ export class PokemonsDetalharComponent implements OnInit {
       p.price = this.pokemon.price;
     }
     this.service.SetPokemonEnviado(p);
+  }
+
+  proxPokemonDetalhar(): void {
+    this._router.navigate(['pokemons/detalhar'], { queryParams : {id: this.id + 1}});
+  }
+
+  anteriorPokemonDetalhar(): void {
+    this._router.navigate(['pokemons/detalhar'], { queryParams : {id: this.id - 1}});
   }
 }

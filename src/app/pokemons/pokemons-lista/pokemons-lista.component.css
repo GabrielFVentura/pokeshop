@@ -41,6 +41,8 @@
   right: -35%;
   top: -15%;
   border-radius:55%;
+  min-width: 21%;
+  text-align: center;
   transform: rotate(
     29deg
   );
