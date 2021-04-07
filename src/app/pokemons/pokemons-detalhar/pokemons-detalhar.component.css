@@ -77,6 +77,12 @@
   bottom: 40%;
   transform: rotate(-90deg);
   width: 20%;
+  transition: all .2s ease;
+}
+
+.pokemon-detalhar-arrow-left:hover{
+  transition: all .2s ease;
+  transform: rotate(-90deg) scale(1.1);
 }
 
 .pokemon-detalhar-arrow-right{
@@ -85,6 +91,12 @@
   bottom: 40%;
   transform: rotate(-270deg);
   width: 20%;
+  transition: all .2s ease;
+}
+
+.pokemon-detalhar-arrow-right:hover{
+  transition: all .2s ease;
+  transform: rotate(-270deg) scale(1.1);
 }
 
 .icon-img{
