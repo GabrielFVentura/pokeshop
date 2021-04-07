@@ -2,13 +2,11 @@
   <ng-template pTemplate="start">
    <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80" width="250"
          class="p-mr-2" style="float:left" >
-    <div style="position: absolute;
-                left: 10%;
-                top: 1%;
-                width: 50%;">
+
+    <div class="header-main__search">
       <p-autoComplete (onSelect)="select($event)" (completeMethod)="search($event)" [dropdown]="true"
                       [suggestions]="pokemonsFiltrados" placeholder="Nome do Pokemon" [style]="{'width':'100%'}"
-                      class="col-8 header-main__search" field="name" [minLength]="1"></p-autoComplete>
+                      class="col-8 " field="name" [minLength]="1"></p-autoComplete>
     </div>
   </ng-template>
 

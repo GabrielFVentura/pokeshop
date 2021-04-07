@@ -41,11 +41,11 @@
 }
 
 .header-main__search{
-  position: relative;
+  position: absolute;
+  top: 1%;
+  width: 50%;
   left: 25%;
-  top:1.4%;
   height:8.1%;
-  width:50%
 }
 
 .pokeball-pokemon-cashback{
