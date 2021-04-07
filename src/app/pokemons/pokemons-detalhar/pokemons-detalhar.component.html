@@ -7,11 +7,11 @@
             {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}
             <div class="row icons-row">
               <div [title]="typeOne" [className]="'icon ' + typeOne">
-                <img alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
+                <img class="icon-img" alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
               </div>
 
               <div [title]="typeTwo" [hidden]="pokemon.types.length === 1" [className]="'icon ' + typeTwo">
-                <img alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
+                <img class="icon-img" alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
               </div>
             </div>
           </div>
