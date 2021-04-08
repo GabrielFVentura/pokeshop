@@ -67,6 +67,9 @@ export class PokemonsListaComponent implements OnInit {
                 }
                 pok.price = ((10 * (pokemonBuscado.weight + pokemonBuscado.height)) * ((100 - pok.promo) / 100)
                                     / (pokemonBuscado.id / 10)).toFixed(2);
+                if (pok.price === 0){
+                  pok.price = 1.00;
+                }
                 pok.imgUrl = pokemonBuscado.sprites.front_default;
               },
               (error) => console.error(error));
@@ -88,6 +91,9 @@ export class PokemonsListaComponent implements OnInit {
               pk.promo = (Math.floor(Math.random() * 50) + 1);
               pk.price = ((100 * (p.weight + p.height) / (p.id / 10)).toFixed(2)) as any;
               pk.price = Math.floor(((pk.price * pk.promo) / 100)).toFixed(2);
+              if (pk.price === 0){
+                pk.price = 1.00;
+              }
               pk.imgUrl = p.sprites.front_shiny;
 
               this.pokemons.push(pk);

@@ -8,11 +8,11 @@
             <span *ngIf="error">MissingNo</span>
             <div class="row icons-row">
               <div [title]="typeOne" [className]="'icon ' + typeOne">
-                <img *ngIf="!error" class="icon-img" alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
+                <img [routerLink]="['/pokemons/lista']" [queryParams]="{type:typeOne}" *ngIf="!error" class="icon-img" alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
               </div>
 
               <div [title]="typeTwo" [hidden]="pokemon.types.length === 1" [className]="'icon ' + typeTwo">
-                <img *ngIf="!error" class="icon-img" alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
+                <img [routerLink]="['/pokemons/lista']" [queryParams]="{type:typeTwo}" *ngIf="!error" class="icon-img" alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
               </div>
             </div>
           </div>

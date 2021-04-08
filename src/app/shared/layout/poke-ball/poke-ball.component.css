@@ -162,8 +162,10 @@ li{
 
 .pokemon-added-count{
   position: fixed;
-  top: 6.8%;
-  right: 1.8%;
-  background-color:yellow;
+  top: 6.9%;
+  right: 1.2%;
+  background-color:greenyellow;
+  padding:0.1%;
   font-size:15px;
+  font-family: Roboto, sans-serif;
 }

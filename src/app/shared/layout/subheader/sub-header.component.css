@@ -5,6 +5,6 @@
   transition:500ms all;
 }
 .svg-pokeball:hover{
-  transform:scale(1.125);
+  transform:scale(1.125,1.125);
   transition:500ms all;
 }
