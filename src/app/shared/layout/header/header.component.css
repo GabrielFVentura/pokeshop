@@ -32,6 +32,7 @@
   position:fixed;
   top:2%;
   right:1%;
+  transform:rotate(0deg);
 }
 
 .poke-ball-open{
@@ -59,4 +60,15 @@
   );
   z-index: 1;
   transition: visibility 1s;
+}
+
+
+.rotacionar-direita{
+  transform: rotate(
+    29deg
+  )
+}
+
+.rotacionar-esquerda{
+  transform: rotate(-50deg)
 }

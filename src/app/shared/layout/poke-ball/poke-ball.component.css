@@ -159,3 +159,11 @@ li{
   right: 25.5%;
   position: absolute;
 }
+
+.pokemon-added-count{
+  position: fixed;
+  top: 6.8%;
+  right: 1.8%;
+  background-color:yellow;
+  font-size:15px;
+}

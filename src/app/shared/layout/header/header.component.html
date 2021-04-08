@@ -1,10 +1,11 @@
-<p-menubar [style]="{'font-size': '35px', 'height':'5%','background-color':'red','margin':'-5px'}">
+<p-menubar [style]="{'font-size': '35px', 'height':'5%', 'margin':'-5px', 'background': 'rgb(255,0,0)',
+'background': 'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(45,21,21,1) 100%)'}">
   <ng-template pTemplate="start">
-   <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo.png" height="80" width="250"
-         class="p-mr-2" style="float:left" >
+   <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo2.png" height="80" width="250"
+         class="p-mr-2" style="float:left;margin-left:8%" >
 
     <div class="header-main__search">
-      <p-autoComplete (onSelect)="select($event)" (completeMethod)="search($event)" [dropdown]="true"
+      <p-autoComplete (onSelect)="searchPokemon($event)" (completeMethod)="search($event)" [dropdown]="true"
                       [suggestions]="pokemonsFiltrados" placeholder="Nome do Pokemon" [style]="{'width':'100%'}"
                       class="col-8 " field="name" [minLength]="1"></p-autoComplete>
     </div>
@@ -16,12 +17,15 @@
          (click)="togglePokeBall()"
          [src]="open ? './assets/img/poke_ball--open.png' : './assets/img/poke_ball--closed.png'"
          [height]="open ? '80': '60'" class="p-mr-2"
+         [style]="pokemonAdicionados === 0 ? {'transform': 'rotate(0deg)'} :
+                  !open ? pokeBallCheia? {'transform': 'rotate(10deg)','margin-left':'0.5%'} :
+                                         {'transform': 'rotate(-10deg)','margin-right':'0.5%'} :
+                                         {'transform':'rotate(0deg)'}"
          [ngClass]="open ? 'poke-ball-open' : 'poke-ball-closed'" (mouseover)="open = true">
   </ng-template>
 </p-menubar>
 
 <div [hidden]="!open" class="col-8 btn-primary pokeball-pokemon-cashback">{{cashbackValue * 100}}% de Cashback!</div>
 
-
-
 <app-poke-ball [class]="open ? 'poke-ball-main-open' : 'poke-ball-main-closed'"></app-poke-ball>
+

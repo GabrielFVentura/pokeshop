@@ -11,10 +11,12 @@ import {Router} from '@angular/router';
 
 export class HeaderComponent implements OnInit {
   public open: boolean;
-  numItems: any;
-  cashbackValue: number;
-  pokemons: any;
-  pokemonsFiltrados: any;
+  public numItems: any;
+  public cashbackValue: number;
+  public pokemons: any;
+  public pokemonsFiltrados: any;
+  public pokeBallCheia: boolean;
+  public pokemonAdicionados: number;
 
   constructor(
     private service: PokemonService,
@@ -23,6 +25,8 @@ export class HeaderComponent implements OnInit {
     this.open = false;
     this.cashbackValue = 0.10;
     this.pokemons = new PokemonList().pokemons;
+    this.pokeBallCheia = false;
+    this.pokemonAdicionados = 0;
   }
 
   ngOnInit(): void {
@@ -31,6 +35,12 @@ export class HeaderComponent implements OnInit {
     });
     localStorage.cashBackPercent = this.cashbackValue;
     localStorage.cashBackValue = 50;
+    setInterval(() => {
+      this.pokemonAdicionados = JSON.parse(localStorage.pokemons).length;
+      if (this.pokemonAdicionados > 0){
+        this.pokeBallCheia = !this.pokeBallCheia;
+      }
+    }, 1000);
   }
 
   search(event: any): void {
@@ -44,7 +54,7 @@ export class HeaderComponent implements OnInit {
     this.numItems++;
   }
 
-  select(p: any): void {
+  searchPokemon(p: any): void {
     this._router.navigate(['pokemons/detalhar'], { queryParams : {id: p.id}});
   }
 }

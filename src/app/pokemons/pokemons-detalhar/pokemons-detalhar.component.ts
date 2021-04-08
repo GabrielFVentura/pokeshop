@@ -14,6 +14,7 @@ export class PokemonsDetalharComponent implements OnInit {
   public typeOne: string;
   public typeTwo: string;
   public id: number;
+  public error: boolean;
 
   constructor(
     private service: PokemonService,
@@ -27,6 +28,7 @@ export class PokemonsDetalharComponent implements OnInit {
     this.typeTwo = '';
     this.shiny = false;
     this.id = 0;
+    this.error = false;
   }
 
 
@@ -63,6 +65,9 @@ export class PokemonsDetalharComponent implements OnInit {
             this.pokemon.items.push(i.item);
           }
         });
+      }, (e) => {
+          console.log(e);
+          this.error = true;
       });
     });
   }

@@ -1,17 +1,18 @@
 <div class="pokemon-detalhar-main" style="margin-top: 6%;">
   <div class="row">
-    <div class="col-6">
+    <div [ngClass]="error? 'col-12' : 'col-6'">
       <p-card>
         <ng-template pTemplate="header">
           <div class="pokemon-detalhar-name">
-            {{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}
+            <span *ngIf="!error">{{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}</span>
+            <span *ngIf="error">MissingNo</span>
             <div class="row icons-row">
               <div [title]="typeOne" [className]="'icon ' + typeOne">
-                <img class="icon-img" alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
+                <img *ngIf="!error" class="icon-img" alt="type badge" [src]="pokemon.types?.length >= 1 ? 'assets/typesBadge/'+typeOne+'.svg' : ''">
               </div>
 
               <div [title]="typeTwo" [hidden]="pokemon.types.length === 1" [className]="'icon ' + typeTwo">
-                <img class="icon-img" alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
+                <img *ngIf="!error" class="icon-img" alt="type badge" [src]="pokemon.types?.length === 1 ? '' : 'assets/typesBadge/'+typeTwo+'.svg'">
               </div>
             </div>
           </div>
@@ -20,10 +21,12 @@
 
         <ng-template pTemplate="body">
           <div class="pokemon-detalhar-img-main">
-            <img *ngIf="id !== 1" (click)="anteriorPokemonDetalhar()" alt="arrow left" src="assets/img/poke-arrow-f.png" class="pokemon-detalhar-arrow-left">
-            <img *ngIf="id !== 898 && id !== 10220" (click)="proxPokemonDetalhar()" alt="arrow right" src="assets/img/poke-arrow-f.png" class="pokemon-detalhar-arrow-right">
-            <img [alt]="'imagem do pokemon ' + pokemon?.name" class="pokemon-detalhar-img"
+            <img *ngIf="id !== 1 && id !== 10001 && !this.error" (click)="anteriorPokemonDetalhar()" alt="arrow left" src="assets/img/poke-arrow-f.png" class="pokemon-detalhar-arrow-left">
+            <img *ngIf="id !== 898 && id !== 10220 && !this.error" (click)="proxPokemonDetalhar()" alt="arrow right" src="assets/img/poke-arrow-f.png" class="pokemon-detalhar-arrow-right">
+            <img *ngIf="!error" [alt]="'imagem do pokemon ' + pokemon?.name" class="pokemon-detalhar-img"
                  [src]="shiny? pokemon?.imgUrlShiny : pokemon?.imgUrl">
+            <img *ngIf="error" class="pokemon-detalhar-img"
+                 src="assets/img/missingNo.png">
           </div>
         </ng-template>
 
@@ -32,7 +35,7 @@
         </ng-template>
       </p-card>
     </div>
-    <div class="col-6">
+    <div *ngIf="!error" class="col-6">
       <p-card [style]="{'width': '91.3%'}">
         <ng-template pTemplate="header">
           <h3 class="pokemon-detalhar-details-header">Detalhes</h3>

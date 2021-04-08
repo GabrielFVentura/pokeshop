@@ -11,10 +11,10 @@ import {MessageService} from 'primeng/api';
   encapsulation: ViewEncapsulation.None
 })
 export class PokeBallComponent implements OnInit {
-  pokemonsAdicionados: any;
-  precoTotal: number;
-  cashBackValue: string;
-  mouseEvent: any;
+  public pokemonsAdicionados: any;
+  public precoTotal: number;
+  public cashBackValue: string;
+  public mouseEvent: any;
 
   constructor(
     private service: PokemonService,
@@ -78,6 +78,11 @@ export class PokeBallComponent implements OnInit {
       this.removerPokemon(p);
     }
     localStorage.pokemons = JSON.stringify(this.pokemonsAdicionados);
+  }
+
+  contarQtdPokemon(): number{
+    console.log(JSON.parse(localStorage.pokemons));
+    return 0;
   }
 
   finalizarCompras(): void {

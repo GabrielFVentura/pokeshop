@@ -1,7 +1,7 @@
 <div class="col-12">
   <div class="pokemon-card row pokemon-list-row"  *ngFor="let p of pokemons; let i = index">
 
-    <p-card>
+    <p-card [style]="{'border-radius':'5%','box-shadow':'4px 2px gray'}">
       <ng-template pTemplate="header">
 
       <div [style]="{'min-height':'210px'}">
