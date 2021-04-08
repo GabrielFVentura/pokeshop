@@ -6,7 +6,7 @@
 
       <div [style]="{'min-height':'210px'}">
         <a [routerLink]="['/pokemons/detalhar']" [queryParams]="{id:p?.id}" data-toggle="tooltip" role="button">
-          <img style="background-color: rgba(180,180,180,0.3);border-radius:6%"
+          <img class="pokemon-list-img-background"
                [alt]="'imagem do pokemon ' + p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)" height="40%"
                [src]="p?.imgUrl">
         </a>
