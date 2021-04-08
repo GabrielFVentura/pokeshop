@@ -72,3 +72,16 @@
 .rotacionar-esquerda{
   transform: rotate(-50deg)
 }
+
+.menu-logo{
+  float:left;
+  margin-left:7%;
+  transition: all 500ms;
+  margin-top:5%;
+
+}
+
+.menu-logo:hover{
+  transform:scale(1.125,1.125);
+  transition: all 500ms;
+}

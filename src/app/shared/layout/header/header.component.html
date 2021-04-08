@@ -2,7 +2,7 @@
 'background': 'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(45,21,21,1) 100%)'}">
   <ng-template pTemplate="start">
    <img alt="submenu option logo" routerLink="/pokemons/lista/" [queryParams]="{'type': 'fp'}" src="./assets/img/logo2.png" height="80" width="250"
-         class="p-mr-2" style="float:left;margin-left:8%" >
+         class="menu-logo">
 
     <div class="header-main__search">
       <p-autoComplete (onSelect)="searchPokemon($event)" (completeMethod)="search($event)" [dropdown]="true"
