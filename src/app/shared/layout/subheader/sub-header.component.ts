@@ -18,7 +18,7 @@ export class SubHeaderComponent implements OnInit {
         label: 'Normal',
         routerLink: 'pokemons/lista',
         queryParams: {type: 'normal'},
-        style: {'font-size': ' 145%'},
+        style: {'font-size': '145%'}
       },
       {
         label: 'Fogo',
