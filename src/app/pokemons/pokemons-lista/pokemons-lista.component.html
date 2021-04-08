@@ -6,13 +6,16 @@
 
       <div [style]="{'min-height':'210px'}">
         <a [routerLink]="['/pokemons/detalhar']" [queryParams]="{id:p?.id}" data-toggle="tooltip" role="button">
-          <img style="background-color: rgba(180,180,180,0.3);border-radius:6%" [alt]="'imagem do pokemon ' + p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)" height="40%" [src]="p?.imgUrl">
+          <img style="background-color: rgba(180,180,180,0.3);border-radius:6%"
+               [alt]="'imagem do pokemon ' + p?.pokemon.name.charAt(0).toUpperCase() + p?.pokemon.name.slice(1)" height="40%"
+               [src]="p?.imgUrl">
         </a>
       </div>
 
       </ng-template>
       <span class="row" style="width:100%">
-        <span title="{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}" class="pokemon-list-name col-12">{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}
+        <span title="{{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}" class="pokemon-list-name col-12">
+          {{p?.pokemon?.name.charAt(0).toUpperCase() + p?.pokemon?.name.slice(1)}}
         </span>
 
         <div class="row col-12" style="max-width: 100%">
@@ -22,19 +25,19 @@
         </div>
       </span>
 
-      <p-table styleClass="table-class" [value]="p?.stats">
+      <p-table [style]="{'width':'100%'}" [value]="p?.stats">
         <ng-template pTemplate="header">
-          <tr>
-            <th style="width: 18%; font-size:8px ;text-align: center;">HP</th>
-            <th style="width: 18%; font-size:9px ;text-align: center;">ATK</th>
-            <th style="width: 18%; font-size:9px ;text-align: center;">DEF</th>
-            <th style="width: 18%; font-size:9px ;text-align: center;">SP-ATK</th>
-            <th style="width: 18%; font-size:9px ;text-align: center;">SP-DEF</th>
-            <th style="width: 18%; font-size:9px ;text-align: center;">SPD</th>
+          <tr style="font-size:9px;text-align: center">
+            <th>HP</th>
+            <th>ATK</th>
+            <th>DEF</th>
+            <th>SP-ATK</th>
+            <th>SP-DEF</th>
+            <th>SPD</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-k>
-          <th style="text-align: center;font-size:9px">{{k.base_stat}}</th>
+          <th style="text-align: center;font-size:11px">{{k.base_stat}}</th>
         </ng-template>
       </p-table>
 

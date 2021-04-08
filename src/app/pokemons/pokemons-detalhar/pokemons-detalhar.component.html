@@ -1,7 +1,7 @@
 <div class="pokemon-detalhar-main" style="margin-top: 6%;">
   <div class="row">
     <div [ngClass]="error? 'col-12' : 'col-6'">
-      <p-card>
+      <p-card [style]="{'height':'100%'}">
         <ng-template pTemplate="header">
           <div class="pokemon-detalhar-name">
             <span *ngIf="!error">{{pokemon?.name.charAt(0).toUpperCase() + pokemon?.name.slice(1)}}</span>
@@ -98,20 +98,15 @@
                         font-size: 24px;
                         left: 6.5%;
                         position: absolute;">Peso: {{(pokemon?.weight * 0.45).toFixed(2)}}Kg</span>
-
             <span style="line-height: 3;
                          font-size: 24px;
                          right: 30%;
                          position: absolute;">Altura: {{(pokemon?.height / 10).toFixed(2)}}m</span></div>
-
           <p-button (click)="adicionarPokemon()" icon="pi pi-plus-circle" label="Adicionar"
                     class="pokemon-list-add-button">
-
           </p-button>
         </ng-template>
-
       </p-card>
     </div>
   </div>
-
 </div>

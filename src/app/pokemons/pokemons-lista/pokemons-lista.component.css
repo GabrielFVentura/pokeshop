@@ -1,7 +1,7 @@
 .pokemon-list-row{
   padding: 0;
   display: table;
-  width: 18.4%;
+  width: 21%;
   float: left;
   margin: 0.55%;
 }
@@ -23,8 +23,8 @@
 }
 
 .pokemon-card{
-  width: 18%;
-  max-width:18%;
+  width: 22.9%;
+  max-width:22.9%;
   margin-left: 0.92%;
 }
 

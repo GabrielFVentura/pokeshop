@@ -77,7 +77,7 @@ export class PokemonsListaComponent implements OnInit {
         const randomArray = (length: number, max: number) =>
           Array(length).fill(undefined).map(() => Math.round(Math.random() * max));
 
-        randomArray(10, 898).forEach(r => {
+        randomArray(12, 898).forEach(r => {
           this.service.BuscarPokemonPorId(r).subscribe(p => {
               const pk = new Pokemon();
               pk.pokemon = {

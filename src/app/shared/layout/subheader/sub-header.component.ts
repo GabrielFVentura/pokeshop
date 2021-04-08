@@ -18,13 +18,13 @@ export class SubHeaderComponent implements OnInit {
         label: 'Normal',
         routerLink: 'pokemons/lista',
         queryParams: {type: 'normal'},
-        style: {'font-size': '145%'}
+        style: {'font-size': '145%'},
       },
       {
         label: 'Fogo',
         routerLink: 'pokemons/lista',
         queryParams: {type: 'fire'},
-        style: {'font-size': ' 145%'}
+        style: {'font-size': ' 145%'},
       },
       {
         label: 'Água',
@@ -90,7 +90,8 @@ export class SubHeaderComponent implements OnInit {
         label: 'Aço',
         routerLink: 'pokemons/lista',
         queryParams: {type: 'steel'},
-        style: {'font-size': ' 145%'}
+        style: {'font-size': ' 145%'},
+        icon: 'fire-icon'
       },
       {
         label: 'Psíquico',
@@ -102,7 +103,7 @@ export class SubHeaderComponent implements OnInit {
         label: 'Gelo',
         routerLink: 'pokemons/lista',
         queryParams: {type: 'ice'},
-        style: {'font-size': ' 145%'}
+        style: {'font-size': ' 145%'},
       },
       {
         label: 'Fada',
