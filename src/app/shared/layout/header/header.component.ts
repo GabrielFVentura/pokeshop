@@ -36,7 +36,11 @@ export class HeaderComponent implements OnInit {
     localStorage.cashBackPercent = this.cashbackValue;
     localStorage.cashBackValue = 50;
     setInterval(() => {
-      this.pokemonAdicionados = JSON.parse(localStorage.pokemons).length;
+      if (localStorage.pokemons !== '' && localStorage.pokemons !== undefined){
+        this.pokemonAdicionados = JSON.parse(localStorage.pokemons).length;
+      } else {
+        this.pokemonAdicionados = 0;
+      }
       if (this.pokemonAdicionados > 0){
         this.pokeBallCheia = !this.pokeBallCheia;
       }

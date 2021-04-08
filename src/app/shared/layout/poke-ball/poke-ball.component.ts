@@ -106,7 +106,8 @@ export class PokeBallComponent implements OnInit {
       } else {
         this.precoTotal = 0;
         this.pokemonsAdicionados = [];
-        localStorage.removeItem('pokemons');
+        //localStorage.removeItem('pokemons');
+        localStorage.pokemons = [];
         localStorage.removeItem('cashBackValue');
         localStorage.cashBackValue = cashBack;
         this.cashBackValue = cashBack.toString();

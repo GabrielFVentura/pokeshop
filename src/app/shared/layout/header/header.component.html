@@ -17,10 +17,11 @@
          (click)="togglePokeBall()"
          [src]="open ? './assets/img/poke_ball--open.png' : './assets/img/poke_ball--closed.png'"
          [height]="open ? '80': '60'" class="p-mr-2"
-         [style]="pokemonAdicionados === 0 ? {'transform': 'rotate(0deg)'} :
-                  !open ? pokeBallCheia? {'transform': 'rotate(10deg)','margin-left':'0.5%'} :
-                                         {'transform': 'rotate(-10deg)','margin-right':'0.5%'} :
-                                         {'transform':'rotate(0deg)'}"
+         [style]="pokemonAdicionados === 0 || pokemonAdicionados === undefined ? {'transform': 'rotate(0deg)'} :
+                  !open ?
+                  pokeBallCheia? {'transform': 'rotate(10deg)','margin-left':'0.5%'} : {'transform': 'rotate(-10deg)','margin-right':'0.5%'}
+                  : {'transform':'rotate(0deg)'}"
+
          [ngClass]="open ? 'poke-ball-open' : 'poke-ball-closed'" (mouseover)="open = true">
   </ng-template>
 </p-menubar>
