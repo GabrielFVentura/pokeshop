@@ -1,2 +1,10 @@
-
-
+.svg-pokeball{
+  position: absolute;
+  right: 46.3%;
+  top: 6.9%;
+  transition:500ms all;
+}
+.svg-pokeball:hover{
+  transform:scale(1.125);
+  transition:500ms all;
+}
