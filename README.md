@@ -12,6 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 >* Improve pokemon-detalhar screen
 >* Improve PokeList(Cart component)
 >* Improve responsiveness 
+>* Add Login/Logout functionality
 
 ## Sample Screen
 
