@@ -4,7 +4,7 @@ Building an e-commerce of Pokemon, practing HTML/CSS, developed with Angular 11 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
-#TODO LIST
+>TODO LIST
 
 * Add IconsType in the respective SubMenu type section
 * Add Search submit button in the SubMenu Pokeball img
@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Improve PokeList(Cart component)
 * Improve responsiveness 
 
-#Sample Screen
+>Sample Screen
 
 ![image](https://user-images.githubusercontent.com/49933515/114184391-2642a280-991b-11eb-97a1-789d536abb74.png)
 
