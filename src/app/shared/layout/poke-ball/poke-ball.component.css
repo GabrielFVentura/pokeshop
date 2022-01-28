@@ -1,7 +1,6 @@
 .poke-ball-header{
   line-height: 3;
   text-align: center;
-  font-family: Roboto, sans-serif;
   font-size: 3rem;
 }
 
@@ -16,7 +15,6 @@
 }
 
 .poke-ball-list-name{
-  font-family: Roboto,sans-serif;
   font-size: 1.1rem;
   display:grid;
   align-content: center;
@@ -167,5 +165,4 @@ li{
   background-color:greenyellow;
   padding:0.1%;
   font-size:15px;
-  font-family: Roboto, sans-serif;
 }
